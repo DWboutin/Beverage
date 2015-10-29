@@ -1,6 +1,6 @@
 import React from 'react';
 import { connectReduxForm } from 'redux-form';
-import loginValidation from '../utils/validations/loginForm';
+import loginValidation from '../../utils/validations/loginForm';
 
 class LoginForm extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
         <div>
           <label htmlFor="password">Password</label>
           <input type="text" {...password} />
-          {password.error && password.touched && <div>{password.error}</div>}
+          {username.error && username.touched && <div>{username.error}</div>}
         </div>
         <div>
           <button type="submit">Submit</button>

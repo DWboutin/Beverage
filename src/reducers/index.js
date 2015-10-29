@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import { dummy } from './dummy-reducers';
+import { login } from './login-reducers';
 import { reducer as formReducer } from 'redux-form';
 
 let reducers = combineReducers({
-  dummy, form: formReducer
+  login, form: formReducer
 });
 
 export default reducers;

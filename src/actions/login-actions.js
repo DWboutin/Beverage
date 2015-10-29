@@ -42,12 +42,7 @@ export function fetchLoginAuth({username, password}) {
           session.setItem('user-username', res.body.data.username);
           dispatch(receiveLoginAuth(res.body));
         } else {
-          // if no result but no errors
-          if(!res.body.error){
-            dispatch(errorLoginAuth(res.body.message));
-          }else{
-            dispatch(errorLoginAuth(res.body.error));
-          }
+          dispatch(errorLoginAuth(res.body.message));
         }
 
       });

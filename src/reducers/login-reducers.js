@@ -4,7 +4,8 @@ const initialState = {
   logedInAt: '',
   user: {},
   isFetching: false,
-  error: false
+  error: false,
+  message: ''
 };
 
 export function login(state = initialState, action = {}) {
