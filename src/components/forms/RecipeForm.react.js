@@ -32,9 +32,10 @@ class RecipeForm extends React.Component {
 }
 
 RecipeForm = connectReduxForm({
-  form: 'recipe',
+  form: 'recipeForm',
   fields: ['title', 'tags', 'code'],
-  validate: recipeValidation
+  validate: recipeValidation,
+  reduxMountPoint: 'recipeForm'
 })(RecipeForm);
 
 export default RecipeForm;

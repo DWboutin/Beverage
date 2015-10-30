@@ -43,18 +43,18 @@ gulp.task('nodemon', function(cb) {
     });
 });
 
-// TASK: HANDLE BROWSER REFRESH CORRECTLY
 
-gulp.task('browserify', function() {
-  return browserify('./src/client/app.js')
-    .transform(babelify.configure({optional: ["runtime"]}))
+gulp.task('browserify', function () {
+  return browserify({entries: './src/client/app.js', extensions: ['.js'], debug: true})
+    .transform(babelify)
     .bundle()
-    .pipe(source('bundle.js'))
+    .pipe(source('app.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
+    // Add transformation tasks to the pipeline here.
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(config.ROOT_FOLDER + '/public/js/'));
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('lint', function (cb) {

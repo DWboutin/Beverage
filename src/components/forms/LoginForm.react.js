@@ -27,9 +27,10 @@ class LoginForm extends React.Component {
 }
 
 LoginForm = connectReduxForm({
-  form: 'login',
+  form: 'loginForm',
   fields: ['username', 'password'],
-  validate: loginValidation
+  validate: loginValidation,
+  reduxMountPoint: 'loginForm'
 })(LoginForm);
 
 export default LoginForm;
