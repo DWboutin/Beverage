@@ -4,10 +4,10 @@ import loginValidation from '../../utils/validations/loginForm';
 
 class LoginForm extends React.Component {
   render() {
-    const { fields: {username, password}, onSubmit } = this.props;
+    const { fields: {username, password}, handleSubmit } = this.props;
 
     return (
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username</label>
           <input type="text" {...username} />

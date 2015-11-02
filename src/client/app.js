@@ -11,16 +11,16 @@ import routes from '../routes';
 import reducers from '../reducers';
 import { APP_DOM_CONTAINER } from '../utils/consts';
 
-const store = compose(
+/*const store = compose(
   // Enables your middleware:
   applyMiddleware(thunkMiddleware), // any Redux middleware, e.g. redux-thunk
   // Provides support for DevTools:
   devTools(),
   // Lets you write ?debug_session=<name> in address bar to persist debug sessions
   persistState(global.location.href.match(/[?&]debug_session=([^&]+)\b/))
-)(createStore)(reducers);
+)(createStore)(reducers);*/
 
-//let store = applyMiddleware(thunkMiddleware)(createStore)(reducers);
+let store = applyMiddleware(thunkMiddleware)(createStore)(reducers);
 
 ReactDOM.render((
     <Provider store={store}>
