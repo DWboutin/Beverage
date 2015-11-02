@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectReduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import loginValidation from '../../utils/validations/loginForm';
 
 class LoginForm extends React.Component {
@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
   }
 }
 
-LoginForm = connectReduxForm({
+LoginForm = reduxForm({
   form: 'loginForm',
   fields: ['username', 'password'],
   validate: loginValidation,

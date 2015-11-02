@@ -7,10 +7,9 @@ import RecipeForm from '../forms/RecipeForm.react';
 class RecipeCreatePage extends React.Component {
 
   handleSubmit(data,t ,e) {
-    data.preventDefault();
     let { dispatch } = this.props;
-    console.log(this.props);
-    //dispatch(initialize('recipeForm', {})); // clear form
+    console.log(arguments);
+    dispatch(initialize('recipeForm', {})); // clear form
   }
 
   render() {

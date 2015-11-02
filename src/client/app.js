@@ -23,12 +23,7 @@ const store = compose(
 //let store = applyMiddleware(thunkMiddleware)(createStore)(reducers);
 
 ReactDOM.render((
-  <div>
     <Provider store={store}>
       <Router history={createHistory()}>{routes}</Router>
     </Provider>
-    <DebugPanel top right bottom>
-      <DevTools store={store} monitor={LogMonitor} />
-    </DebugPanel>
-  </div>
 ), document.getElementById( APP_DOM_CONTAINER ));

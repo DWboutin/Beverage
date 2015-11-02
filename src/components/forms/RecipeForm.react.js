@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectReduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import recipeValidation from '../../utils/validations/recipeForm';
 
 class RecipeForm extends React.Component {
@@ -31,7 +31,7 @@ class RecipeForm extends React.Component {
   }
 }
 
-RecipeForm = connectReduxForm({
+RecipeForm = reduxForm({
   form: 'recipeForm',
   fields: ['title', 'tags', 'code'],
   validate: recipeValidation,

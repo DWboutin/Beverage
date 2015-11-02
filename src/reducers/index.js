@@ -3,7 +3,7 @@ import { login } from './login-reducers';
 import { reducer as formReducer } from 'redux-form';
 
 let reducers = combineReducers({
-  login, form: formReducer
+  login, loginForm: formReducer, recipeForm: formReducer
 });
 
 export default reducers;
