@@ -16,7 +16,7 @@ class RecipeCreatePage extends React.Component {
     return (
       <div id="recipe-create-page">
         <h2>Create</h2>
-        <RecipeForm handleSubmit={this.handleSubmit.bind(this)} />
+        <RecipeForm onSubmit={this.handleSubmit.bind(this)} />
       </div>
     );
   }
