@@ -21,7 +21,7 @@ export default class Html extends React.Component {
       <body>
         <div id={ APP_DOM_CONTAINER } dangerouslySetInnerHTML={{__html: renderToString(this.props.component)}}></div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="http://localhost:3000/assets/js/app.min.js"></script>
+        <script type="text/javascript" src="http://localhost:3000/assets/js/app.min.js"></script>
       </body>
       </html>
     );

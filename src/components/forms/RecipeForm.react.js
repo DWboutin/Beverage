@@ -1,8 +1,10 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import recipeValidation from '../../utils/validations/recipeForm';
+import AceEditor from 'react-ace';
 
 class RecipeForm extends React.Component {
+
   render() {
     const { fields: {title, tags, code}, handleSubmit } = this.props;
 
@@ -20,8 +22,13 @@ class RecipeForm extends React.Component {
         </div>
         <div>
           <label htmlFor="code">Code</label>
-          <textarea {...code} />
-          {code.error && code.touched && <div>{code.error}</div>}
+          <AceEditor
+            mode="javascript"
+            theme="github"
+            onChange={onChange}
+            name="code"
+            editorProps={{$blockScrolling: true}}
+            />
         </div>
         <div>
           <button type="submit">Submit</button>
@@ -33,7 +40,7 @@ class RecipeForm extends React.Component {
 
 RecipeForm = reduxForm({
   form: 'recipeForm',
-  fields: ['title', 'tags', 'code'],
+  fields: ['title', 'tags'],
   validate: recipeValidation
 })(RecipeForm);
 

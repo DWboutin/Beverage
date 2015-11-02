@@ -8,7 +8,7 @@ class RecipeCreatePage extends React.Component {
 
   handleSubmit(data,t ,e) {
     let { dispatch } = this.props;
-    console.log(arguments);
+    console.log(data);
     dispatch(initialize('recipeForm', {})); // clear form
   }
 
