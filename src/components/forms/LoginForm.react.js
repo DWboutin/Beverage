@@ -4,10 +4,10 @@ import loginValidation from '../../utils/validations/loginForm';
 
 class LoginForm extends React.Component {
   render() {
-    const { fields: {username, password}, handleSubmit } = this.props;
+    const { fields: {username, password}, onSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <div>
           <label htmlFor="username">Username</label>
           <input type="text" {...username} />
@@ -30,7 +30,6 @@ LoginForm = reduxForm({
   form: 'loginForm',
   fields: ['username', 'password'],
   validate: loginValidation,
-  reduxMountPoint: 'loginForm'
 })(LoginForm);
 
 export default LoginForm;
