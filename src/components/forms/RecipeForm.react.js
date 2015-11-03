@@ -1,8 +1,21 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import recipeValidation from '../../utils/validations/recipeForm';
+import ace from '../../wrappers/brace.pkg';
+
 
 class RecipeForm extends React.Component {
+
+  componentDidMount() {
+    const { onEditorChange } = this.props;
+    var editor = ace.edit('javascript-editor');
+    editor.getSession().setMode('ace/mode/javascript');
+    editor.setTheme('ace/theme/monokai');
+    editor.on('change', (e) => {
+      onEditorChange(editor.getValue());
+    });
+  }
+
   render() {
     const { fields: {title, tags, code}, handleSubmit } = this.props;
 
@@ -20,7 +33,8 @@ class RecipeForm extends React.Component {
         </div>
         <div>
           <label htmlFor="code">Code</label>
-          <textarea {...code} />
+          <textarea {...code} style={{visibility: 'hidden'}} />
+          <div id="javascript-editor" style={{height: '400px'}}></div>
           {code.error && code.touched && <div>{code.error}</div>}
         </div>
         <div>

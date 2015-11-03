@@ -8,15 +8,21 @@ class RecipeCreatePage extends React.Component {
 
   handleSubmit(data,t ,e) {
     let { dispatch } = this.props;
-    console.log(arguments);
+
     dispatch(initialize('recipeForm', {})); // clear form
+  }
+
+  handleEditorChange(data) {
+    let { dispatch } = this.props;
+
+    dispatch(initialize('recipeForm', {code: data}));
   }
 
   render() {
     return (
       <div id="recipe-create-page">
         <h2>Create</h2>
-        <RecipeForm onSubmit={this.handleSubmit.bind(this)} />
+        <RecipeForm onSubmit={this.handleSubmit.bind(this)} onEditorChange={this.handleEditorChange.bind(this)} />
       </div>
     );
   }
