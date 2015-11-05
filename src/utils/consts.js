@@ -5,5 +5,11 @@ export default {
     REQUEST_LOGIN_AUTH: 'REQUEST_LOGIN_AUTH',
     RECEIVE_LOGIN_AUTH: 'RECEIVE_LOGIN_AUTH',
     ERROR_LOGIN_AUTH: 'ERROR_LOGIN_AUTH',
+    SUBMIT_RECIPE: 'SUBMIT_RECIPE',
+    RECIPE_CREATED: 'RECIPE_CREATED',
+    RECIPE_SUBMIT_ERROR: 'RECIPE_SUBMIT_ERROR',
+  },
+  MESSAGES: {
+    recipeCreated: 'Your recipe was successfully created'
   }
 }

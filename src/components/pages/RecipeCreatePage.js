@@ -2,20 +2,25 @@ import React from 'react';
 import { Link } from 'react-router';
 import { initialize } from 'redux-form';
 import { connect } from 'react-redux';
+import { submitRecipe } from '../../actions/recipes-actions';
 import RecipeForm from '../forms/RecipeForm.react';
 
 class RecipeCreatePage extends React.Component {
 
-  handleSubmit(data,t ,e) {
+  handleSubmit(data) {
     let { dispatch } = this.props;
 
-    dispatch(initialize('recipeForm', {})); // clear form
+    dispatch(submitRecipe(data));
   }
 
   handleEditorChange(data) {
     let { dispatch } = this.props;
 
-    dispatch(initialize('recipeForm', {code: data}));
+    dispatch(initialize('recipeForm', data));
+  }
+
+  onDrop(files) {
+    console.log('Received files: ', files);
   }
 
   render() {

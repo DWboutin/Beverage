@@ -7,13 +7,26 @@ import ace from '../../wrappers/brace.pkg';
 class RecipeForm extends React.Component {
 
   componentDidMount() {
-    const { onEditorChange } = this.props;
-    var editor = ace.edit('javascript-editor');
-    editor.getSession().setMode('ace/mode/javascript');
-    editor.setTheme('ace/theme/monokai');
-    editor.on('change', (e) => {
-      onEditorChange(editor.getValue());
+    const { onEditorChange, values } = this.props;
+    this.editor = ace.edit('javascript-editor');
+
+    this.editor.getSession().setMode('ace/mode/javascript');
+    this.editor.setTheme('ace/theme/monokai');
+
+    this.editor.on('change', (e) => {
+      let values = this.props.values;
+      onEditorChange({...values, code: this.editor.getValue()});
     });
+  }
+
+  componentDidUpdate() {
+    if(this.props.values.title === undefined && this.props.values.tags === undefined && this.props.values.code === undefined){
+      this.editor.setValue('', -1);
+    }
+  }
+
+  componentWillUmount() {
+    this.editor.destroy();
   }
 
   render() {
