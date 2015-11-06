@@ -11,10 +11,6 @@
   },
   "rules": {
     "strict": 0,
-    "no-underscore-dangle": 0,
-    "quotes": [
-      2,
-      "single"
-    ]
+    "no-underscore-dangle": 0
   }
 }

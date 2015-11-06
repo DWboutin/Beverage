@@ -92,7 +92,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function(){
-  return gulp.src(['./src/assets/js/boostrap.min.js','./src/assets/js/checkbox.js','./src/assets/js/radio.js','./src/assets/js/bootstrap-switch.js','./src/assets/js/toolbar.js','./src/assets/js/application.js'])
+  return gulp.src(['./src/assets/js/bootstrap.min.js','./src/assets/js/checkbox.js','./src/assets/js/radio.js','./src/assets/js/bootstrap-switch.js','./src/assets/js/toolbar.js','./src/assets/js/application.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('assets.min.js'))
     .pipe(gulp.dest('./public/js/'))
