@@ -81,13 +81,10 @@ gulp.task('lint', function (cb) {
 gulp.task('sass', function () {
   return sass('./src/assets/sass/style.sass', { sourcemap: true,  style: 'compressed' })
     .on('error', sass.logError)
-
-    // For file sourcemaps
     .pipe(sourcemaps.write('./', {
       includeContent: false,
       sourceRoot: 'source'
     }))
-
     .pipe(gulp.dest('./public/css/'));
 });
 

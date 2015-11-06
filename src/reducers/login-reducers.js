@@ -33,6 +33,22 @@ export function login(state = initialState, action = {}) {
         error: true
       };
 
+    case ACTIONS.LOGOUT:
+      if(global.sessionStorage !== undefined){
+        let session = global.sessionStorage;
+
+        session.removeItem('user');
+        session.removeItem('user_expiration');
+        session.removeItem('username');
+        session.removeItem('userkey');
+      }
+
+      return {
+        ...state,
+        user: {},
+        logedInAt: ''
+      };
+
     default:
       return state;
 

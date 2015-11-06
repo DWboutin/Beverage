@@ -8,6 +8,7 @@ export default {
     SUBMIT_RECIPE: 'SUBMIT_RECIPE',
     RECIPE_CREATED: 'RECIPE_CREATED',
     RECIPE_SUBMIT_ERROR: 'RECIPE_SUBMIT_ERROR',
+    LOGOUT: 'LOGOUT',
   },
   MESSAGES: {
     recipeCreated: 'Your recipe was successfully created'

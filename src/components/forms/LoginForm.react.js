@@ -7,20 +7,29 @@ class LoginForm extends React.Component {
     const { fields: {username, password}, handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" {...username} />
-          {username.error && username.touched && <div>{username.error}</div>}
+      <form onSubmit={handleSubmit} className="form-horizontal">
+
+        <div className="form-group row">
+          <label className="col-sm-3 control-label" htmlFor="username">Username</label>
+          <div className="col-sm-9">
+            <input type="text" className="form-control" {...username}/>
+          </div>
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input type="text" {...password} />
-          {username.error && username.touched && <div>{username.error}</div>}
+        {username.error && username.touched && <div>{username.error}</div>}
+
+        <div className="form-group row">
+          <label className="col-sm-3 control-label" htmlFor="password">Password</label>
+          <div className="col-sm-9">
+            <input type="text" className="form-control" {...password}/>
+          </div>
         </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
+        {password.error && password.touched && <div>{password.error}</div>}
+        
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            <button className="btn btn-block btn-success btn-embossed" type="submit">Submit</button>
+          </div>
+        </div>  
       </form>
     );
   }

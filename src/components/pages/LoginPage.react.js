@@ -17,7 +17,13 @@ class LoginPage extends React.Component {
     return (
       <div id="login-page">
         <h1>Login</h1>
-        <LoginForm onSubmit={this.handleSubmit.bind(this)}/>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 col-md-offset-2">
+              <LoginForm onSubmit={this.handleSubmit.bind(this)}/>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
