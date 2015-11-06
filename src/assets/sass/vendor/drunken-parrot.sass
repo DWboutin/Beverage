@@ -1,0 +1,2787 @@
+@font-face
+  font-family: 'SourceSansPro'
+  src: url('../fonts/source-sans-pro/sourcesanspro-regular.eot')
+  src: url('../fonts/source-sans-pro/sourcesanspro-regular.eot?#iefix') format("embedded-opentype"), url('../fonts/source-sans-pro/sourcesanspro-regular.woff') format("woff"), url('../fonts/source-sans-pro/sourcesanspro-regular.ttf') format("truetype"), url('../fonts/source-sans-pro/sourcesanspro-regular.svg#sourcesanspro-regular') format("svg")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'SourceSansProExtraLight'
+  src: url('../fonts/source-sans-pro/sourcesanspro-extralight.eot')
+  src: url('../fonts/source-sans-pro/sourcesanspro-extralight.eot?#iefix') format("embedded-opentype"), url('../fonts/source-sans-pro/sourcesanspro-extralight.woff') format("woff"), url('../fonts/source-sans-pro/sourcesanspro-extralight.ttf') format("truetype"), url('../fonts/source-sans-pro/sourcesanspro-extralight.svg#sourcesanspro-extralight') format("svg")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'SourceSansProBold'
+  src: url('../fonts/source-sans-pro/sourcesanspro-bold.eot')
+  src: url('../fonts/source-sans-pro/sourcesanspro-bold.eot?#iefix') format("embedded-opentype"), url('../fonts/source-sans-pro/sourcesanspro-bold.woff') format("woff"), url('../fonts/source-sans-pro/sourcesanspro-bold.ttf') format("truetype"), url('../fonts/source-sans-pro/sourcesanspro-bold.svg#sourcesanspro-bold') format("svg")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'SourceSansProSemiBold'
+  src: url('../fonts/source-sans-pro/sourcesanspro-semibold.eot')
+  src: url('../fonts/source-sans-pro/sourcesanspro-semibold.eot?#iefix') format("embedded-opentype"), url('../fonts/source-sans-pro/sourcesanspro-semibold.woff') format("woff"), url('../fonts/source-sans-pro/sourcesanspro-semibold.ttf') format("truetype"), url('../fonts/source-sans-pro/sourcesanspro-semibold.svg#sourcesanspro-semibold') format("svg")
+  font-weight: normal
+  font-style: normal
+
+/*@input-bg:                  @inverse;
+/*@alert-padding:               15px;
+ *@alert-border-radius:         @border-radius-base;
+ *@alert-link-font-weight:      bold;
+
+body
+  font-family: "SourceSansPro", Helvetica, Arial, sans-serif
+  font-size: 16px
+  line-height: 1.5
+  color: #000000
+  background-color: #ffffff
+
+a
+  color: #02baf2
+  text-decoration: none
+  -webkit-transition: 0.25s
+  transition: 0.25s
+
+  &:hover
+    color: #009dcd
+    text-decoration: none
+
+  &:focus
+    color: #009dcd
+    text-decoration: none
+    outline: none
+
+.alert
+  border: none
+  position: relative
+
+  > strong
+    font-family: "SourceSansProBold", Helvetica, Arial, sans-serif
+
+.alert-dismissable .close
+  position: absolute
+  top: 50%
+  right: 20px
+  color: inherit
+  margin-top: -8px
+  opacity: 1
+
+  &:hover
+    opacity: 0.5
+
+.close
+  font-size: 16px
+
+.alert-primary
+  background-color: rgba(2, 186, 242, 0.2)
+  color: #009dcd
+
+  .alert-link
+    color: #00769a
+
+  .close
+    color: #02baf2
+
+.alert-success
+  background-color: rgba(62, 181, 172, 0.2)
+  color: #28948c
+
+  .alert-link
+    color: #1d6c66
+
+  .close
+    color: #3eb5ac
+
+.alert-info
+  background-color: rgba(168, 140, 213, 0.2)
+  color: #9175bd
+
+  .alert-link
+    color: #7652ad
+
+  .close
+    color: #a88cd5
+
+.alert-warning
+  background-color: rgba(250, 212, 107, 0.2)
+  color: #f3bc65
+
+  .alert-link
+    color: #efa736
+
+  .close
+    color: #fad46b
+
+.alert-danger
+  background-color: rgba(248, 69, 69, 0.2)
+  color: #cc0000
+
+  .alert-link
+    color: #990000
+
+  .close
+    color: #f84545
+
+.badge
+  font-size: 14px
+  font-weight: bold
+  background-color: #b2c6cd
+
+a.list-group-item.active > .badge, .nav-pills > .active > a > .badge, .nav-list > .active > a > .badge
+  color: #02baf2
+
+.breadcrumb
+  background: #ffffff
+  border: 1px solid #d6e1e5
+  border-radius: 4px
+
+  > li
+    font-size: 14px
+
+  li + li:before
+    content: "\203A"
+
+  &.breadcrumbs-minimal
+    border: none
+
+    li + li:before
+      content: "/\00a0"
+
+  > .active
+    color: #364347
+
+.btn
+  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+  border: 1px solid transparent
+  font-size: 16px
+  font-weight: normal
+  line-height: 1.6
+  border-radius: 4px
+  padding: 7px 15px 6px 15px
+  text-transform: uppercase
+  -webkit-font-smoothing: subpixel-antialiased
+  -webkit-transition: all .25s linear
+  transition: all .25s linear
+
+  >
+    [class^="ss-"], [class^="fa-"]
+      position: relative
+      top: 2px
+      font-size: 12px
+
+.btn-xs.btn >
+  [class^="ss-"], [class^="fa-"]
+    font-size: 11px
+    top: 0
+
+.btn-hg.btn >
+  [class^="ss-"], [class^="fa-"]
+    top: 2px
+
+.btn
+  >
+    [class^="ss-"].pull-right
+      top: 5px
+
+    [class^="fa-"]
+      &.pull-right
+        top: 5px
+
+      top: -1px
+
+  &:focus, &:active:focus, &.active:focus
+    outline: none
+
+  &:hover, &:focus
+    outline: none
+    color: #ffffff
+
+  &:active, &.active
+    outline: none
+    -webkit-box-shadow: none
+    box-shadow: none
+
+  &.disabled, &[disabled]
+    background-color: #ffffff
+    color: rgba(255, 255, 255, 0.75)
+    opacity: 0.7
+    filter: alpha(opacity = 70)
+
+fieldset[disabled] .btn
+  background-color: #ffffff
+  color: rgba(255, 255, 255, 0.75)
+  opacity: 0.7
+  filter: alpha(opacity = 70)
+
+.btn.dropdown-toggle:before
+  font-family: FontAwesome
+  content: "\f078"
+  font-size: 12px
+  float: right
+  padding: 3px 0 3px 10px
+
+.btn-default
+  color: #02baf2
+  background-color: white
+  border-color: #d6e1e5
+
+  &:hover, &:focus, &:active, &.active
+    color: #02baf2
+    background-color: white
+    border-color: #02baf2
+
+  &:active, &.active
+    background: #02baf2
+    border-color: #009dcd
+    color: white
+
+  &.disabled, &[disabled]
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-default
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-default
+  &.disabled:hover, &[disabled]:hover
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-default:hover
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-default
+  &.disabled:focus, &[disabled]:focus
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-default:focus
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-default
+  &.disabled:active, &[disabled]:active
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-default:active
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-default
+  &.disabled.active, &[disabled].active
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-default.active
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-stroke
+  color: #02baf2
+  background-color: white
+  border-color: #d6e1e5
+  border-width: 2px
+  padding: 5px 15px
+
+  &:hover, &:focus, &:active, &.active
+    color: #02baf2
+    background-color: white
+    border-color: #02baf2
+
+  &:active, &.active
+    background: #02baf2
+    border-color: #009dcd
+    color: white
+
+  &.disabled, &[disabled]
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-stroke
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-stroke
+  &.disabled:hover, &[disabled]:hover
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-stroke:hover
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-stroke
+  &.disabled:focus, &[disabled]:focus
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-stroke:focus
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-stroke
+  &.disabled:active, &[disabled]:active
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-stroke:active
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-stroke
+  &.disabled.active, &[disabled].active
+    background-color: #e1eef3
+    border-color: #d6e1e5
+
+fieldset[disabled] .btn-stroke.active
+  background-color: #e1eef3
+  border-color: #d6e1e5
+
+.btn-primary
+  color: #ffffff
+  background-color: #02baf2
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #35c8f5
+    border-color: #35c8f5
+
+  &:active, &.active
+    background: #009dcd
+    border-color: #009dcd
+
+  &.disabled, &[disabled]
+    background-color: #b3eafb
+    border-color: #b3eafb
+
+fieldset[disabled] .btn-primary
+  background-color: #b3eafb
+  border-color: #b3eafb
+
+.btn-primary
+  &.disabled:hover, &[disabled]:hover
+    background-color: #b3eafb
+    border-color: #b3eafb
+
+fieldset[disabled] .btn-primary:hover
+  background-color: #b3eafb
+  border-color: #b3eafb
+
+.btn-primary
+  &.disabled:focus, &[disabled]:focus
+    background-color: #b3eafb
+    border-color: #b3eafb
+
+fieldset[disabled] .btn-primary:focus
+  background-color: #b3eafb
+  border-color: #b3eafb
+
+.btn-primary
+  &.disabled:active, &[disabled]:active
+    background-color: #b3eafb
+    border-color: #b3eafb
+
+fieldset[disabled] .btn-primary:active
+  background-color: #b3eafb
+  border-color: #b3eafb
+
+.btn-primary
+  &.disabled.active, &[disabled].active
+    background-color: #b3eafb
+    border-color: #b3eafb
+
+fieldset[disabled] .btn-primary.active
+  background-color: #b3eafb
+  border-color: #b3eafb
+
+.btn-danger
+  color: #ffffff
+  background-color: #f84545
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #f96a6a
+    border-color: #f96a6a
+
+  &:active, &.active
+    background: #cc0000
+    border-color: #cc0000
+
+  &.disabled, &[disabled]
+    background-color: #fdc7c7
+    border-color: #fdc7c7
+
+fieldset[disabled] .btn-danger
+  background-color: #fdc7c7
+  border-color: #fdc7c7
+
+.btn-danger
+  &.disabled:hover, &[disabled]:hover
+    background-color: #fdc7c7
+    border-color: #fdc7c7
+
+fieldset[disabled] .btn-danger:hover
+  background-color: #fdc7c7
+  border-color: #fdc7c7
+
+.btn-danger
+  &.disabled:focus, &[disabled]:focus
+    background-color: #fdc7c7
+    border-color: #fdc7c7
+
+fieldset[disabled] .btn-danger:focus
+  background-color: #fdc7c7
+  border-color: #fdc7c7
+
+.btn-danger
+  &.disabled:active, &[disabled]:active
+    background-color: #fdc7c7
+    border-color: #fdc7c7
+
+fieldset[disabled] .btn-danger:active
+  background-color: #fdc7c7
+  border-color: #fdc7c7
+
+.btn-danger
+  &.disabled.active, &[disabled].active
+    background-color: #fdc7c7
+    border-color: #fdc7c7
+
+fieldset[disabled] .btn-danger.active
+  background-color: #fdc7c7
+  border-color: #fdc7c7
+
+.btn-warning
+  color: #ffffff
+  background-color: #fad46b
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #fbdd89
+    border-color: #fbdd89
+
+  &:active, &.active
+    background: #f3bc65
+    border-color: #f3bc65
+
+  &.disabled, &[disabled]
+    background-color: #fce5a6
+    border-color: #fce5a6
+
+fieldset[disabled] .btn-warning
+  background-color: #fce5a6
+  border-color: #fce5a6
+
+.btn-warning
+  &.disabled:hover, &[disabled]:hover
+    background-color: #fce5a6
+    border-color: #fce5a6
+
+fieldset[disabled] .btn-warning:hover
+  background-color: #fce5a6
+  border-color: #fce5a6
+
+.btn-warning
+  &.disabled:focus, &[disabled]:focus
+    background-color: #fce5a6
+    border-color: #fce5a6
+
+fieldset[disabled] .btn-warning:focus
+  background-color: #fce5a6
+  border-color: #fce5a6
+
+.btn-warning
+  &.disabled:active, &[disabled]:active
+    background-color: #fce5a6
+    border-color: #fce5a6
+
+fieldset[disabled] .btn-warning:active
+  background-color: #fce5a6
+  border-color: #fce5a6
+
+.btn-warning
+  &.disabled.active, &[disabled].active
+    background-color: #fce5a6
+    border-color: #fce5a6
+
+fieldset[disabled] .btn-warning.active
+  background-color: #fce5a6
+  border-color: #fce5a6
+
+.btn-info
+  color: #ffffff
+  background-color: #d6e1e5
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #dee7ea
+    border-color: #dee7ea
+
+  &:active, &.active
+    background: #93a4aa
+    border-color: #93a4aa
+
+  &.disabled, &[disabled]
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-info
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-info
+  &.disabled:hover, &[disabled]:hover
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-info:hover
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-info
+  &.disabled:focus, &[disabled]:focus
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-info:focus
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-info
+  &.disabled:active, &[disabled]:active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-info:active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-info
+  &.disabled.active, &[disabled].active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-info.active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-success
+  color: #ffffff
+  background-color: #3eb5ac
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #65c4bd
+    border-color: #65c4bd
+
+  &:active, &.active
+    background: #93a4aa
+    border-color: #93a4aa
+
+  &.disabled, &[disabled]
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-success
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-success
+  &.disabled:hover, &[disabled]:hover
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-success:hover
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-success
+  &.disabled:focus, &[disabled]:focus
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-success:focus
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-success
+  &.disabled:active, &[disabled]:active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-success:active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-success
+  &.disabled.active, &[disabled].active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-success.active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-purple
+  color: #ffffff
+  background-color: #a88cd5
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #b9a3dd
+    border-color: #b9a3dd
+
+  &:active, &.active
+    background: #93a4aa
+    border-color: #93a4aa
+
+  &.disabled, &[disabled]
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-purple
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-purple
+  &.disabled:hover, &[disabled]:hover
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-purple:hover
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-purple
+  &.disabled:focus, &[disabled]:focus
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-purple:focus
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-purple
+  &.disabled:active, &[disabled]:active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-purple:active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-purple
+  &.disabled.active, &[disabled].active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-purple.active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-orange
+  color: #ffffff
+  background-color: #f58410
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #f79d40
+    border-color: #f79d40
+
+  &:active, &.active
+    background: #93a4aa
+    border-color: #93a4aa
+
+  &.disabled, &[disabled]
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-orange
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-orange
+  &.disabled:hover, &[disabled]:hover
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-orange:hover
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-orange
+  &.disabled:focus, &[disabled]:focus
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-orange:focus
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-orange
+  &.disabled:active, &[disabled]:active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-orange:active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-orange
+  &.disabled.active, &[disabled].active
+    background-color: #e6edef
+    border-color: #e6edef
+
+fieldset[disabled] .btn-orange.active
+  background-color: #e6edef
+  border-color: #e6edef
+
+.btn-inverse
+  color: #ffffff
+  background-color: #364347
+
+  &:hover, &:focus, &:active, &.active, &.hover
+    color: #ffffff
+    background-color: #5e696c
+    border-color: #5e696c
+
+  &:active, &.active
+    background: #93a4aa
+    border-color: #93a4aa
+
+  &.disabled, &[disabled]
+    background-color: #364347
+    border-color: #364347
+
+fieldset[disabled] .btn-inverse
+  background-color: #364347
+  border-color: #364347
+
+.btn-inverse
+  &.disabled:hover, &[disabled]:hover
+    background-color: #364347
+    border-color: #364347
+
+fieldset[disabled] .btn-inverse:hover
+  background-color: #364347
+  border-color: #364347
+
+.btn-inverse
+  &.disabled:focus, &[disabled]:focus
+    background-color: #364347
+    border-color: #364347
+
+fieldset[disabled] .btn-inverse:focus
+  background-color: #364347
+  border-color: #364347
+
+.btn-inverse
+  &.disabled:active, &[disabled]:active
+    background-color: #364347
+    border-color: #364347
+
+fieldset[disabled] .btn-inverse:active
+  background-color: #364347
+  border-color: #364347
+
+.btn-inverse
+  &.disabled.active, &[disabled].active
+    background-color: #364347
+    border-color: #364347
+
+fieldset[disabled] .btn-inverse.active
+  background-color: #364347
+  border-color: #364347
+
+.btn-embossed
+  -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear
+  transition: border .25s linear, color .25s linear, background-color .25s linear
+
+  &:hover, &:focus
+    top: 2px
+    position: relative
+
+  &.btn-primary
+    -webkit-box-shadow: 0 5px #009dcd
+    box-shadow: 0 5px #009dcd
+
+    &:hover, &:focus
+      -webkit-box-shadow: 0 3px #009dcd
+      box-shadow: 0 3px #009dcd
+      background: #02baf2
+
+    &.active, &:active
+      -webkit-box-shadow: 0 0 #009dcd
+      box-shadow: 0 0 #009dcd
+      top: 5px
+      background: #02baf2
+      border-color: #02baf2
+
+  &.btn-danger
+    -webkit-box-shadow: 0 5px #cc0000
+    box-shadow: 0 5px #cc0000
+
+    &:hover, &:focus
+      -webkit-box-shadow: 0 3px #cc0000
+      box-shadow: 0 3px #cc0000
+      background: #f84545
+
+    &.active, &:active
+      -webkit-box-shadow: 0 0 #cc0000
+      box-shadow: 0 0 #cc0000
+      top: 5px
+      background: #f84545
+      border-color: #f84545
+
+  &.btn-warning
+    -webkit-box-shadow: 0 5px #f3bc65
+    box-shadow: 0 5px #f3bc65
+
+    &:hover, &:focus
+      -webkit-box-shadow: 0 3px #f3bc65
+      box-shadow: 0 3px #f3bc65
+      background: #fad46b
+
+    &.active, &:active
+      -webkit-box-shadow: 0 0 #f3bc65
+      box-shadow: 0 0 #f3bc65
+      top: 5px
+      background: #fad46b
+      border-color: #fad46b
+
+  &.btn-success
+    -webkit-box-shadow: 0 5px #28948c
+    box-shadow: 0 5px #28948c
+
+    &:hover, &:focus
+      -webkit-box-shadow: 0 3px #28948c
+      box-shadow: 0 3px #28948c
+      background: #3eb5ac
+
+    &.active, &:active
+      -webkit-box-shadow: 0 0 #28948c
+      box-shadow: 0 0 #28948c
+      top: 5px
+      background: #3eb5ac
+      border-color: #3eb5ac
+
+  &.btn-purple
+    -webkit-box-shadow: 0 5px #9175bd
+    box-shadow: 0 5px #9175bd
+
+    &:hover, &:focus
+      -webkit-box-shadow: 0 3px #9175bd
+      box-shadow: 0 3px #9175bd
+      background: #a88cd5
+
+    &.active, &:active
+      -webkit-box-shadow: 0 0 #9175bd
+      box-shadow: 0 0 #9175bd
+      top: 5px
+      background: #a88cd5
+      border-color: #a88cd5
+
+  &.btn-orange
+    -webkit-box-shadow: 0 5px #e96300
+    box-shadow: 0 5px #e96300
+
+    &:hover, &:focus
+      -webkit-box-shadow: 0 3px #e96300
+      box-shadow: 0 3px #e96300
+      background: #f58410
+
+    &.active, &:active
+      -webkit-box-shadow: 0 0 #e96300
+      box-shadow: 0 0 #e96300
+      top: 5px
+      background: #f58410
+      border-color: #f58410
+
+.btn-kr
+  padding: 14px 22px
+  font-size: 24px
+  line-height: 1.25
+  border-radius: 4px
+
+.btn-lg
+  padding: 10px 18px
+  font-size: 20px
+  line-height: 1.45
+  border-radius: 4px
+
+.btn-sm
+  padding: 5px 13px
+  font-size: 14px
+  line-height: 1.3
+  border-radius: 4px
+
+.btn-xs
+  padding: 5px 13px
+  font-size: 12px
+  line-height: 1.083
+  border-radius: 3px
+
+.btn-block
+  white-space: normal
+
+.btn-group
+  .btn-stroke +
+    .btn-stroke, .btn-group
+      margin-left: -2px
+
+  .btn-group +
+    .btn-stroke, .btn-group
+      margin-left: -2px
+
+  > .btn
+    text-transform: none
+    font-family: "SourceSansPro", Helvetica, Arial, sans-serif
+    text-align: left
+    -webkit-transition: none
+    transition: none
+
+/* Restyling the dropdowns within nested, vertical and justified groups
+
+.btn-group-vertical > .btn
+  text-transform: none
+  font-family: "SourceSansPro", Helvetica, Arial, sans-serif
+  text-align: left
+  -webkit-transition: none
+  transition: none
+
+.btn-group > .btn.active, .btn-group-vertical > .btn.active
+  background: #e1eef3
+  color: #5e6969
+  border-color: #d6e1e5
+  z-index: 0
+
+.btn-group .btn-group-dropdown .btn-default [class^="ss-"], .btn-group-vertical .btn-group-dropdown .btn-default [class^="ss-"], .btn-group .btn-group-dropdown .btn-default [class^="fa-"], .btn-group-vertical .btn-group-dropdown .btn-default [class^="fa-"]
+  color: #93a4aa
+
+.btn-group .btn-group-dropdown .btn-default.dropdown-toggle, .btn-group-vertical .btn-group-dropdown .btn-default.dropdown-toggle
+  color: #02baf2
+
+.btn-group .btn-group-dropdown .btn-default:hover, .btn-group-vertical .btn-group-dropdown .btn-default:hover
+  border-color: #02baf2
+
+.btn-group .btn-group-dropdown .btn-default:active, .btn-group-vertical .btn-group-dropdown .btn-default:active
+  border-color: #93a4aa
+  color: #364347
+
+.btn-group-justified.btn-group .btn
+  text-align: center
+
+  [class^="ss-"], [class^="fa-"]
+    margin-left: 5px
+
+.btn-group-xs > .btn
+  padding: 5px 13px
+  font-size: 12px
+  line-height: 1.083
+  border-radius: 3px
+
+.btn-group-sm > .btn
+  padding: 5px 13px
+  font-size: 14px
+  line-height: 1.3
+  border-radius: 4px
+
+.btn-group-lg > .btn
+  padding: 10px 18px
+  font-size: 20px
+  line-height: 1.45
+  border-radius: 4px
+
+.btn-group-kr > .btn
+  padding: 14px 22px
+  font-size: 24px
+  line-height: 1.25
+  border-radius: 4px
+
+/* Dropdown Speicfic
+
+.btn-group-dropdown
+  /* Open States
+
+  > .btn
+    text-transform: none
+    font-family: "SourceSansPro", Helvetica, Arial, sans-serif
+    -webkit-transition: none
+    transition: none
+
+    /* Split Dropdowns Icon
+
+    + .dropdown-toggle
+      min-width: 40px
+      text-align: center
+
+    &.btn-dropdown
+      text-align: left
+
+  .dropdown-toggle
+    padding-left: 13px
+    padding-right: 13px
+    text-align: left
+
+  .btn-default
+    color: #364347
+
+    &:hover
+      border-color: #93a4aa
+
+      [class^="ss-"], [class^="fa-"]
+        color: #02baf2
+
+    &:active
+      background: #e1eef3
+      border-color: #93a4aa
+
+      [class^="ss-"], [class^="fa-"]
+        color: #02baf2
+
+  .btn-primary.dropdown-toggle
+    border-left: 1px solid #009dcd
+
+  .btn-danger.dropdown-toggle
+    border-left: 1px solid #cc0000
+
+  .btn-inverse
+    color: #93a4aa
+
+    &:hover
+      color: white
+
+    &:active
+      background: black
+      border-color: black
+
+      [class^="ss-"], [class^="fa-"]
+        color: #02baf2
+
+    &.dropdown-toggle
+      border-left: 1px solid black
+
+  &.open
+    .btn
+      -webkit-box-shadow: none
+      box-shadow: none
+
+    .dropdown-toggle
+      &.btn-default
+        background: #e1eef3
+        border-color: #b2c6cd
+        color: #364347
+
+        [class^="ss-"], [class^="fa-"]
+          color: #02baf2
+
+      &.btn-primary
+        background: #009dcd
+        border-color: #009dcd
+        color: #ffffff
+
+      &.btn-danger
+        background: #cc0000
+        border-color: #cc0000
+        color: #ffffff
+
+      &.btn-inverse
+        background: black
+        border-color: black
+        color: #ffffff
+
+        [class^="ss-"], [class^="fa-"]
+          color: #02baf2
+
+/* MOVE to DOCS.CSS or DEMO.CSS
+
+.btn-group .btn-group-dropdown .dropdown-toggle, .btn-group-vertical .btn-group-dropdown .dropdown-toggle
+  min-width: 140px
+
+.btn-group-dropdown .btn-dropdown
+  min-width: 170px
+
+.componant-dropdowns [class^="col-md-"]
+  padding: 0px 10px
+
+.checkbox, .radio
+  position: relative
+  margin-bottom: 20px
+  padding-left: 32px
+  font-size: 14px
+  font-family: "SourceSansPro", Helvetica, Arial, sans-serif
+  line-height: 1.6
+  min-height: 20px
+
+.checkbox input, .radio input
+  outline: none !important
+  display: none
+
+.checkbox .icons, .radio .icons
+  color: #02baf2
+  left: 0
+  top: 0
+  position: absolute
+  text-align: center
+  font-size: 16px
+  cursor: pointer
+  width: 20px
+  height: 20px
+  display: block
+
+.checkbox .icons .first-icon, .radio .icons .first-icon, .checkbox .icons .second-icon, .radio .icons .second-icon
+  height: 20px
+  width: 20px
+  position: absolute
+  left: 0
+  top: 0
+  opacity: 1
+  filter: alpha(opacity = 100)
+  border: 1px solid #d6e1e5
+  background: white
+
+.checkbox .icons .first-icon:before, .radio .icons .first-icon:before, .checkbox .icons .second-icon:before, .radio .icons .second-icon:before
+  margin-top: 1px
+  display: block
+
+.checkbox .icons .second-icon, .radio .icons .second-icon, .checkbox.checked .first-icon, .radio.checked .first-icon
+  opacity: 0
+  filter: alpha(opacity = 0)
+
+.checkbox.checked .second-icon, .radio.checked .second-icon
+  opacity: 1
+  filter: alpha(opacity = 100)
+  border-color: #b2c6cd
+  -webkit-transition: color 0.25s linear
+  transition: color 0.25s linear
+
+.checkbox.disabled, .radio.disabled
+  cursor: default
+
+.checkbox.disabled .first-icon, .radio.disabled .first-icon
+  opacity: 1
+  filter: alpha(opacity = 100)
+  background: #e1eef3
+
+.checkbox.disabled .second-icon, .radio.disabled .second-icon
+  opacity: 0
+  filter: alpha(opacity = 0)
+  background: #e1eef3
+
+.checkbox.disabled.checked .first-icon, .radio.disabled.checked .first-icon
+  opacity: 0
+  filter: alpha(opacity = 0)
+
+.checkbox.disabled.checked .second-icon
+  opacity: 1
+  filter: alpha(opacity = 100)
+  color: #b2c6cd
+
+.radio
+  &.disabled.checked .second-icon
+    opacity: 1
+    filter: alpha(opacity = 100)
+    color: #b2c6cd
+
+  .icons
+    .first-icon, .second-icon
+      border-radius: 50px
+
+  &.checked .second-icon:before
+    content: " "
+    width: 8px
+    height: 8px
+    background: #02baf2
+    position: absolute
+    top: 50%
+    border-radius: 8px
+    left: 50%
+    margin-top: -4px
+    margin-left: -4px
+
+  &.disabled.checked .second-icon:before
+    background: #93a4aa
+
+.checkbox .icons
+  .first-icon, .second-icon
+    border-radius: 4px
+
+.dropdown-menu
+  background-color: white
+  border: 1px solid #b2c6cd
+  -webkit-box-shadow: none
+  box-shadow: none
+  min-width: 220px
+  margin-top: 10px
+  left: 0
+  right: auto
+
+  >
+    li > a
+      margin-left: -1px
+      margin-right: -1px
+      color: #5e6969
+      font-size: 16px
+      padding: 4px 15px
+
+      &:hover
+        background-color: #e1eef3
+
+    .active > a
+      color: #ffffff
+      text-decoration: none
+      outline: 0
+      background-color: #02baf2
+      border: 1px solid #009dcd
+
+      &:hover, &:focus
+        color: #ffffff
+        text-decoration: none
+        outline: 0
+        background-color: #02baf2
+        border: 1px solid #009dcd
+
+    .disabled > a
+      color: #b2c6cd
+
+      &:hover, &:focus
+        color: #b2c6cd
+
+    .arrow
+      border-width: 6px
+      position: absolute
+      display: block
+      width: 0
+      height: 0
+      border-color: transparent
+      border-style: solid
+      border-width: 5px
+      content: ""
+
+      &:after
+        position: absolute
+        display: block
+        width: 0
+        height: 0
+        border-color: transparent
+        border-style: solid
+        border-width: 5px
+        content: ""
+
+    .top.arrow
+      /*left: 88%;
+
+      right: 88%
+      border-top-width: 0
+      border-bottom-color: #b2c6cd
+      top: -6px
+
+      &:after
+        content: " "
+        top: 1px
+        margin-left: -5px
+        border-top-width: 0
+        border-bottom-color: white
+
+    .bottom.arrow
+      left: 88%
+      border-bottom-width: 0
+      border-top-color: #b2c6cd
+      bottom: -6px
+
+      &:after
+        content: " "
+        bottom: 1px
+        margin-left: -5px
+        border-bottom-width: 0
+        border-top-color: white
+
+.dropdown-inverse
+  background-color: #364347
+  border-color: #364347
+
+  >
+    li > a
+      color: white
+
+      &:hover
+        background-color: #5e6969
+        color: white
+
+    .active > a
+      border: none
+
+      &:hover, &:focus
+        border: none
+
+    .top.arrow
+      border-bottom-color: #364347
+      top: -6px
+
+      &:after
+        border-bottom-color: #364347
+
+.dropdown-header
+  color: #b2c6cd
+  padding: 3px 15px
+  text-transform: uppercase
+
+.dropup .dropdown-menu
+  margin-bottom: 10px
+
+@media (min-width: 1000px)
+  .dropdown-menu
+    right: 0
+    left: auto
+
+    > .top.arrow
+      left: 88%
+
+label
+  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+  font-weight: normal
+  line-height: 2.4
+  color: #364347
+
+.form-control
+  border: 1px solid #d6e1e5
+  color: #364347
+  font-size: 16px
+  line-height: 1.467
+  padding: 7px 12px
+  height: 40px
+  -webkit-appearance: none
+  border-radius: 4px
+  -webkit-box-shadow: none
+  box-shadow: none
+  -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear
+  transition: border .25s linear, color .25s linear, background-color .25s linear
+
+  &:hover
+    border-color: #93a4aa
+
+.form-group.focus .form-control
+  border-color: #02baf2
+  outline: 0
+  -webkit-box-shadow: none
+  box-shadow: none
+
+.form-control
+  &:focus
+    border-color: #02baf2
+    outline: 0
+    -webkit-box-shadow: none
+    box-shadow: none
+
+  &[disabled], &[readonly]
+    background-color: #e1eef3
+    cursor: default
+
+fieldset[disabled] .form-control
+  background-color: #e1eef3
+  cursor: default
+
+.form-control
+  &:-moz-placeholder
+    color: #b2c6cd
+
+  &::-moz-placeholder
+    color: #b2c6cd
+    opacity: 1
+
+  &:-ms-input-placeholder, &::-webkit-input-placeholder, &.placeholder
+    color: #b2c6cd
+
+.form-control-static
+  padding-top: 6px
+  padding-left: 12px
+  color: #364347
+
+.has-warning
+  .help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    color: #364347
+
+  .form-control
+    border-color: #fad46b
+    -webkit-box-shadow: none
+    box-shadow: none
+
+    &:focus
+      border-color: #fad46b
+      -webkit-box-shadow: none
+      box-shadow: none
+
+  .input-group-addon
+    border-color: #fad46b
+    background-color: #ffffff
+
+.has-error
+  .help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    color: #364347
+
+  .form-control
+    border-color: #f84545
+    -webkit-box-shadow: none
+    box-shadow: none
+
+    &:focus
+      border-color: #f84545
+      -webkit-box-shadow: none
+      box-shadow: none
+
+  .input-group-addon
+    border-color: #f84545
+    background-color: #ffffff
+
+.has-success
+  .help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    color: #364347
+
+  .form-control
+    border-color: #3eb5ac
+    -webkit-box-shadow: none
+    box-shadow: none
+
+    &:focus
+      border-color: #3eb5ac
+      -webkit-box-shadow: none
+      box-shadow: none
+
+  .input-group-addon
+    border-color: #3eb5ac
+    background-color: #ffffff
+
+.form-horizontal
+  .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    margin-top: 0
+    margin-bottom: 0
+    padding-top: 2px
+
+  .radio, .checkbox
+    min-height: 20px
+
+.input-sm
+  height: 30px
+  padding: 6px 10px
+  font-size: 14px
+  line-height: 1.462
+  border-radius: 4px
+
+select.input-sm
+  height: 30px
+  line-height: 30px
+
+textarea.input-sm, select[multiple].input-sm
+  height: auto
+
+.input-lg
+  height: 50px
+  padding: 10px 15px
+  font-size: 20px
+  line-height: 1.235
+  border-radius: 4px
+
+select.input-lg
+  height: 50px
+  line-height: 50px
+
+textarea.input-lg, select[multiple].input-lg
+  height: auto
+
+.input-required span
+  width: 20px
+  height: 40px
+  position: absolute
+  overflow: hidden
+  display: block
+  right: 10px
+  top: -15px
+  -webkit-transform: rotate(135deg)
+  -ms-transform: rotate(135deg)
+  transform: rotate(135deg)
+
+  &:after
+    content: ''
+    width: 40px
+    height: 40px
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)
+    background: #fad46b
+    position: absolute
+    top: 0
+    right: -32px
+    border-radius: 3px
+    -moz-border-radius: 10px
+
+  &:before
+    font-size: 20px
+    content: "*"
+    top: 11px
+    right: 3px
+    color: white
+    position: absolute
+    z-index: 2
+
+.input-icon
+  position: relative
+
+  [class*="ss-"]
+    position: absolute
+    top: 50%
+    left: 15px
+    margin-top: -11px
+    color: #b2c6cd
+
+  [class*="fa-"]
+    position: absolute
+    top: 50%
+    left: 15px
+    margin-top: -11px
+    color: #b2c6cd
+    margin-top: -8px
+
+  .form-control
+    text-indent: 30px
+
+@media screen and (min-width: 320px) and (max-width: 768px)
+  .input-required span
+    width: 14px
+    height: 35px
+    top: -12px
+
+    &:after
+      right: -37px
+
+    &:before
+      font-size: 12.8px
+      content: "*"
+      top: 14px
+      right: 2px
+
+.input-group-lg > .input-group-addon
+  font-size: 20px
+  padding: 3px 5px
+  min-width: 50px
+  max-width: 50px
+
+.input-group-sm > .input-group-addon
+  font-size: 14px
+  padding: 3px 5px
+  min-width: 30px
+  max-width: 30px
+
+.input-group-addon
+  padding: 6px 10px
+  color: #93a4aa
+  background-color: #e1eef3
+  border: 1px solid #d6e1e5
+  border-radius: 4px
+  min-width: 40px
+  max-width: 40px
+
+  &.input-sm
+    font-size: 14px
+    border-radius: 0
+
+  &.input-lg
+    font-size: 20px
+    border-radius: 0
+
+.input-group-btn
+  > .btn
+    -webkit-transition: none
+    transition: none
+
+    &:hover, &:focus
+      z-index: 3
+
+    &:active
+      z-index: 3
+      color: white
+
+  .dropdown-toggle, .btn-dropdown
+    color: #364347
+    text-transform: none
+    padding: 6px 13px 7px
+    font-family: "SourceSansPro", Helvetica, Arial, sans-serif
+
+.label
+  padding: .2em .5em .2em
+
+.label-default
+  background-color: #b2c6cd
+
+  &[href]
+    &:hover, &:focus
+      background-color: #93afb9
+
+.label-primary
+  background-color: #02baf2
+
+  &[href]
+    &:hover, &:focus
+      background-color: #0293bf
+
+.label-success
+  background-color: #3eb5ac
+
+  &[href]
+    &:hover, &:focus
+      background-color: #318f88
+
+.label-info
+  background-color: #a88cd5
+
+  &[href]
+    &:hover, &:focus
+      background-color: #8c67c7
+
+.label-warning
+  background-color: #fad46b
+
+  &[href]
+    &:hover, &:focus
+      background-color: #f8c63a
+
+.label-danger
+  background-color: #f84545
+
+  &[href]
+    &:hover, &:focus
+      background-color: #f61414
+
+.navbar
+  min-height: 76px
+  border-radius: 4px
+
+.navbar-brand
+  padding: 27px 30px
+  height: auto
+
+.navbar-brand-img
+  padding-top: 24px
+  margin: 0 55px 0 40px
+
+.navbar-default
+  background-color: white
+  border-color: #d6e1e5
+  border-width: 2px
+
+  .navbar-nav
+    > li > a
+      color: #93a4aa
+      font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+      &:hover, &:focus
+        color: #5e6969
+        background-color: white
+
+    .dropdown-menu > li.active a
+      border-width: 2px
+      margin-left: -2px
+      margin-right: -2px
+
+    >
+      .active > a
+        color: #02baf2
+        background-color: white
+
+        &:hover, &:focus
+          color: #02baf2
+          background-color: white
+
+      .open > a
+        background-color: white
+        color: #5e6969
+
+        &:hover, &:focus
+          background-color: white
+          color: #5e6969
+
+  .navbar-text
+    color: #b2c6cd
+
+  .navbar-link:hover
+    color: #e1eef3
+
+.navbar-nav
+  > li > a
+    padding-top: 10px
+    padding-bottom: 10px
+
+    &:hover, &:focus
+      color: #5e6969
+
+  &.navbar-icons > li > a
+    padding: 10px 10px
+
+@media (min-width: 768px)
+  .navbar-nav > li > a
+    padding-top: 28px
+    padding-bottom: 28px
+
+.navbar-text
+  margin-top: 16px
+  margin-bottom: 16px
+  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+  &.navbar-right:last-child
+    margin-right: 10px
+
+.navbar-icons > li > a > [class^="fa-"]
+  font-size: 16px
+  margin: 0 10px 0 4px
+
+.navbar-nav .dropdown-menu
+  border-width: 2px
+  border: 2px solid #d6e1e5
+
+  >
+    .arrow
+      border-width: 9px
+
+      &:after
+        border-width: 7px
+
+    .top.arrow
+      display: none
+      left: auto
+      right: 10px
+      border-top-width: 0
+      border-bottom-color: #d6e1e5
+      top: -9px
+
+      &:after
+        content: " "
+        top: 3px
+        margin-left: -7px
+        border-top-width: 0
+        border-bottom-color: white
+
+.navbar-inverse
+  background: #364347
+  border-color: #364347
+
+  .navbar-nav
+    >
+      li > a
+        color: #b2c6cd
+        font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+      .active > a
+        background: #364347
+        color: #fad46b
+
+        &:hover, &:focus
+          background: #364347
+          color: #fad46b
+
+      .open > a
+        background-color: #364347
+        color: #5e6969
+
+        &:hover, &:focus
+          background-color: #364347
+          color: #5e6969
+
+    .dropdown-menu
+      background: #20282a
+      border-width: 0
+
+      >
+        li > a
+          color: #93a4aa
+          margin: 0
+
+          &:hover
+            color: white
+            background: #364347
+
+        .active > a
+          border-width: 0
+          color: white
+          background: #02baf2
+
+          &:hover
+            border-width: 0
+            color: white
+            background: #02baf2
+
+        .top.arrow
+          display: none
+          border-bottom-color: #20282a
+          top: -5px
+          right: 11px
+
+          &:after
+            border-bottom-color: #20282a
+
+  .navbar-text
+    color: #5e6969
+
+  .navbar-link
+    color: #93a4aa
+
+.navbar-new
+  background-color: #02baf2
+  border-radius: 50%
+  width: 7px
+  height: 7px
+  margin: -16px 12px
+  position: absolute
+  top: 50%
+
+.navbar-default .navbar-toggle, .navbar-inverse .navbar-toggle
+  border: 0
+  padding: 15px 10px
+
+.navbar-default .navbar-toggle:hover, .navbar-inverse .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+  background: none
+  opacity: 0.7
+
+.navbar-inverse .navbar-toggle
+  &:focus
+    background: none
+    opacity: 0.7
+
+  border: 0
+  color: white
+
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a
+  color: #ffffff
+  text-decoration: none
+  border-width: 0
+  background-color: #02baf2
+
+  &:hover, &:focus
+    color: #ffffff
+    text-decoration: none
+    border-width: 0
+    background-color: #02baf2
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a
+  border-width: 0
+  color: white
+  background: #02baf2
+
+  &:hover, &:focus
+    border-width: 0
+    color: white
+    background: #02baf2
+
+.navbar-default
+  .navbar-collapse, .navbar-form
+    border: 0
+
+.navbar-inverse
+  .navbar-collapse, .navbar-form
+    border: 0
+
+@media (min-width: 768px)
+  .navbar-nav
+    > li > a
+      padding-top: 28px
+      padding-bottom: 28px
+
+    &.navbar-icons > li > a
+      padding: 27px 10px
+
+    .dropdown-menu > .top.arrow
+      display: block
+
+  .navbar-icons > li > a > [class^="ss-"]
+    font-size: 16px
+    margin: 0
+
+  .navbar-text
+    margin-top: 26px
+    margin-bottom: 26px
+
+.nav
+  li
+    a
+      &.dropdown-toggle >
+        [class^="ss-"]
+          position: relative
+          top: 2px
+          font-size: 12px
+          margin-left: 3px
+
+        [class^="fa-"]
+          position: relative
+          top: 2px
+          font-size: 12px
+          margin-left: 3px
+          top: -1px
+
+      &:focus
+        background: transparent
+
+    &.disabled > a
+      color: #b2c6cd
+
+      &:hover, &:focus
+        color: #b2c6cd
+
+  .open > a
+    background-color: white
+    border-color: #ffffff #ffffff #d6e1e5
+
+    &:hover, &:focus
+      background-color: white
+      border-color: #ffffff #ffffff #d6e1e5
+
+.nav-tabs
+  border-bottom: 1px solid #d6e1e5
+
+  > li
+    > a:hover
+      border-color: transparent
+      background: none
+
+    &.active > a
+      color: #364347
+      border: 1px solid #d6e1e5
+      border-bottom-color: transparent
+      font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+      &:hover, &:focus
+        color: #364347
+        border: 1px solid #d6e1e5
+        border-bottom-color: transparent
+        font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+  &.nav-justified >
+    .active > a
+      border: 1px solid #d6e1e5
+
+      &:hover, &:focus
+        border: 1px solid #d6e1e5
+
+    li > a:hover
+      border-color: #d6e1e5
+
+.nav-stroke
+  border-bottom-width: 2px
+
+  &.nav-tabs > li
+    margin-bottom: -2px
+
+  > li
+    > a
+      border-width: 2px
+
+      &:hover
+        /*border-bottom-color: transparent;
+
+        border-width: 2px
+
+    &.active > a
+      border-width: 2px
+
+      &:hover, &:focus
+        border-width: 2px
+
+  &.nav-justified > .active > a
+    border: 1px solid #d6e1e5
+
+    &:hover, &:focus
+      border: 1px solid #d6e1e5
+
+    border-width: 2px
+
+    &:hover, &:focus
+      border-width: 2px
+
+.nav-pills
+  > li
+    > a
+      line-height: 1.3
+
+      &:hover
+        background-color: #b2c6cd
+        color: #ffffff
+
+    &.active > a
+      color: #ffffff
+      background-color: #02baf2
+
+      &:hover, &:focus
+        color: #ffffff
+        background-color: #02baf2
+
+  .open > a
+    background-color: #b2c6cd
+    color: #ffffff
+
+    &:hover, &:focus
+      background-color: #b2c6cd
+      color: #ffffff
+
+.nav-tabs-justified > .active > a
+  border: 1px solid #d6e1e5
+
+  &:hover, &:focus
+    border: 1px solid #d6e1e5
+
+.nav-tabs .dropdown-menu
+  margin-top: 8px
+  border-top-right-radius: 4px
+  border-top-left-radius: 4px
+
+@media (min-width: 1000px)
+  .nav-tabs
+    > li > a:hover
+      border-color: #ffffff #ffffff #d6e1e5
+
+    &.nav-justified >
+      .active > a
+        border-bottom-color: transparent
+
+        &:hover, &:focus
+          border-bottom-color: transparent
+
+      li > a:hover
+        border-color: #ffffff #ffffff #d6e1e5
+
+  .nav-stroke.nav-justified
+    border-bottom: 2px solid #d6e1e5
+
+    >
+      .active > a
+        border-bottom-color: white
+
+        &:hover, &:focus
+          border-bottom-color: white
+
+      li > a
+        margin-bottom: -2px
+        border-bottom: 0
+
+        &:hover
+          border-color: transparent
+
+.pagination > li
+  >
+    a, span
+      color: #02baf2
+      border: 1px solid #d6e1e5
+      padding: 8px 15px
+
+    a:hover, span:hover, a:focus, span:focus
+      background-color: white
+      color: #02baf2
+      border-color: #02baf2
+      z-index: 2
+      -webkit-transition: all .15s linear
+      transition: all .15s linear
+
+  &.active >
+    a, span
+      background-color: #e1eef3
+      border-color: #d6e1e5
+      color: #364347
+      z-index: 0
+
+    a:hover, span:hover, a:focus, span:focus
+      background-color: #e1eef3
+      border-color: #d6e1e5
+      color: #364347
+      -webkit-transition: none
+      transition: none
+
+.pagination-sm > li
+  >
+    a, span
+      padding: 4px 11px
+      font-size: 14px
+
+  &:first-child >
+    a, span
+      border-bottom-left-radius: 6px
+      border-top-left-radius: 6px
+
+  &:last-child >
+    a, span
+      border-bottom-right-radius: 6px
+      border-top-right-radius: 6px
+
+.pagination-lg
+  > li
+    >
+      a, span
+        padding: 10px 19px
+        font-size: 20px
+
+    &:first-child >
+      a, span
+        border-bottom-left-radius: 4px
+        border-top-left-radius: 4px
+
+    &:last-child >
+      a, span
+        border-bottom-right-radius: 4px
+        border-top-right-radius: 4px
+
+  &.pagination-stroke > li > a
+    padding: 9px 18px
+
+.btn
+  &.previous
+    margin-right: 8px
+    font-size: 15px
+    line-height: 1.429
+    padding-left: 23px
+    padding-right: 23px
+
+  &.next
+    margin-right: 8px
+    font-size: 15px
+    line-height: 1.429
+    padding-left: 23px
+    padding-right: 23px
+    margin-left: 8px
+    margin-right: 0
+
+.pager li
+  >
+    a, span
+      border-radius: 5px
+      border: 1px solid #d6e1e5
+      font-size: 16px
+      color: #02baf2
+      padding: 7px 14px
+      min-width: 100px
+
+    a:hover, span:hover, a:focus, span:focus
+      background-color: #e1eef3
+
+  &.active > a
+    background-color: #e1eef3
+
+  &.disabled >
+    a
+      color: #b2c6cd
+      background-color: white
+      cursor: not-allowed
+
+      &:hover, &:focus
+        color: #b2c6cd
+        background-color: white
+        cursor: not-allowed
+
+    span
+      color: #b2c6cd
+      background-color: white
+      cursor: not-allowed
+
+.pallete-items
+  margin-left: -10px
+
+.pallete-item
+  width: 140px
+  float: left
+  margin: 0 0 0 10px
+
+  &.pallete-joined
+    margin: 0
+    width: 152px
+
+    &:first-child, &:last-child
+      width: 150px
+
+    &:first-of-type .palette
+      border-top-left-radius: 4px
+      border-bottom-left-radius: 4px
+
+    &:last-child .palette
+      border-top-right-radius: 4px
+      border-bottom-right-radius: 4px
+
+.palette-primary
+  border-top-left-radius: 4px
+  border-top-right-radius: 4px
+  padding: 48px 0 8px 10px
+
+.palette-secondary
+  border-bottom-left-radius: 4px
+  border-bottom-right-radius: 4px
+  padding: 18px 10px 8px 10px
+
+.palette-shade
+  padding: 46px 0 10px 10px
+
+.palette
+  font-size: 16px
+  line-height: 1.214
+  color: #ffffff
+  margin: 0
+
+  dt, dd
+    line-height: 1.1
+
+  dt
+    display: block
+    font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+  dd
+    font-weight: 300
+    margin-left: 0
+    -webkit-font-smoothing: subpixel-antialiased
+
+.palette-lagoon
+  background-color: #02baf2
+
+.palette-overboard
+  background-color: #009dcd
+
+.palette-strawberry
+  background-color: #f84545
+
+.palette-first-blood
+  background-color: #cc0000
+
+.palette-banana
+  background-color: #fad46b
+
+.palette-doubloon
+  background-color: #f3bc65
+
+.palette-bruise
+  background-color: #a88cd5
+
+.palette-sugar-plum
+  background-color: #9175bd
+
+.palette-emerald-cove
+  background-color: #3eb5ac
+
+.palette-land-lubber
+  background-color: #28948c
+
+.palette-horizon
+  background-color: #f58410
+
+.palette-nassua-sunset
+  background-color: #e96300
+
+.palette-the-black-flag
+  background-color: #364347
+
+.palette-gunpowder
+  background-color: #5e6969
+
+.palette-pieces-of-eight
+  background-color: #93a4aa
+
+.palette-cutlass
+  background-color: #b2c6cd
+
+.palette-coral
+  background-color: #d6e1e5
+
+.palette-coastal-surf
+  background-color: #e1eef3
+
+.palette-clouds
+  color: #bdc3c7
+
+.palette-paragraph
+  color: #7f8c8d
+  font-size: 12px
+  line-height: 17px
+
+  span
+    color: #bdc3c7
+
+.palette-headline
+  color: #7f8c8d
+  font-size: 13px
+  font-weight: 700
+  margin-top: -3px
+
+.panel
+  -webkit-box-shadow: none
+  box-shadow: none
+
+.panel-body
+  color: #364347
+
+.panel-default
+  border-color: #d6e1e5
+
+  >
+    .panel-heading
+      color: #364347
+      background-color: #e1eef3
+      border-color: #d6e1e5
+
+      + .panel-collapse .panel-body
+        border-top-color: #d6e1e5
+
+    .panel-footer + .panel-collapse .panel-body
+      border-bottom-color: #d6e1e5
+
+.panel-primary
+  border-color: rgba(2, 186, 242, 0.2)
+
+  >
+    .panel-heading
+      color: #009dcd
+      background-color: rgba(2, 186, 242, 0.2)
+      border-color: rgba(2, 186, 242, 0.2)
+
+      + .panel-collapse .panel-body
+        border-top-color: #02baf2
+
+    .panel-footer + .panel-collapse .panel-body
+      border-bottom-color: #02baf2
+
+.panel-info
+  border-color: rgba(168, 140, 213, 0.2)
+
+  >
+    .panel-heading
+      color: #9175bd
+      background-color: rgba(168, 140, 213, 0.2)
+      border-color: rgba(168, 140, 213, 0.2)
+
+      + .panel-collapse .panel-body
+        border-top-color: #a88cd5
+
+    .panel-footer + .panel-collapse .panel-body
+      border-bottom-color: #a88cd5
+
+.panel-success
+  border-color: rgba(62, 181, 172, 0.2)
+
+  >
+    .panel-heading
+      color: #28948c
+      background-color: rgba(62, 181, 172, 0.2)
+      border-color: rgba(62, 181, 172, 0.2)
+
+      + .panel-collapse .panel-body
+        border-top-color: #3eb5ac
+
+    .panel-footer + .panel-collapse .panel-body
+      border-bottom-color: #3eb5ac
+
+.panel-warning
+  border-color: rgba(250, 212, 107, 0.2)
+
+  >
+    .panel-heading
+      color: #f3bc65
+      background-color: rgba(250, 212, 107, 0.2)
+      border-color: rgba(250, 212, 107, 0.2)
+
+      + .panel-collapse .panel-body
+        border-top-color: #fad46b
+
+    .panel-footer + .panel-collapse .panel-body
+      border-bottom-color: #fad46b
+
+.panel-danger
+  border-color: rgba(248, 69, 69, 0.2)
+
+  >
+    .panel-heading
+      color: #cc0000
+      background-color: rgba(248, 69, 69, 0.2)
+      border-color: rgba(248, 69, 69, 0.2)
+
+      + .panel-collapse .panel-body
+        border-top-color: #f84545
+
+    .panel-footer + .panel-collapse .panel-body
+      border-bottom-color: #f84545
+
+.panel-title
+  font-size: 20px
+  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+.panel-footer
+  background-color: #e1eef3
+  border-top-color: #d6e1e5
+
+.table >
+  thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td
+    padding: 14px 5px
+    border-top: 1px solid #d6e1e5
+
+  thead > tr > th
+    border-bottom: 2px solid #d6e1e5
+    font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+
+.tile
+  border-radius: 6px
+  padding: 35px 25px 40px 25px
+  position: relative
+  text-align: center
+
+.tile-profile
+  background-color: #fad46b
+
+  img
+    border: 5px solid white
+    border-radius: 50%
+
+  h4
+    color: white
+    margin-bottom: 2px
+    margin-top: 20px
+
+  p
+    color: white
+    text-transform: uppercase
+
+.tile-login
+  background: #364347
+  padding-bottom: 55px
+
+  .logo
+    margin-bottom: 40px
+    margin-top: 0
+
+  input
+    background: rgba(0, 0, 0, 0.2)
+    border: none
+    color: #d6e1e5
+
+    &[type="text"]
+      margin-bottom: 1px
+      border-bottom-right-radius: 0
+      border-bottom-left-radius: 0
+
+    &[type="password"]
+      border-top-right-radius: 0
+      border-top-left-radius: 0
+      margin-bottom: 20px
+
+  a.btn
+    margin-bottom: 10px
+
+  .checkbox
+    .first-icon, .second-icon
+      background: rgba(0, 0, 0, 0.2)
+      border: 0
+
+  .login-action
+    div[class*='col-']
+      padding: 0
+
+    a
+      font-size: 14px
+      margin-top: 10px
+      display: block
+
+  label.checkbox
+    color: #93a4aa
+    padding-left: 0
+    margin-bottom: 0
+    text-indent: -25px
+
+.icon-button
+  background: #364347
+  width: 40px
+  height: 40px
+  text-align: center
+  padding: 10px
+  border-radius: 6px
+  display: block
+  transition: none
+
+  &:hover
+    background: #02baf2
+    cursor: pointer
+
+    > i
+      color: white
+
+  > i
+    color: #02baf2
+    font-size: 16px
+
+.tool-container
+  background-color: #364347
+  background-size: 100% 100%
+  border-radius: 6px
+  position: absolute
+
+  &.tool-top, &.tool-bottom
+    height: 40px
+    border-bottom: 0px solid #beb8b8
+
+    /* #B1A9A9
+
+.tool-top .tool-item, .tool-bottom .tool-item
+  float: left
+  border-right: 0
+  border-left: 0
+
+.tool-item
+  height: 100%
+  display: block
+  width: 40px
+  height: 40px
+  text-align: center
+  padding: 10px
+  transition: none
+
+  > .fa
+    color: #93a4aa
+
+  &.selected, &:hover
+    background: #02baf2
+
+  &.selected > .fa, &:hover > .fa
+    color: white
+
+.tool-top .tool-item:first-child:hover, .tool-bottom .tool-item:first-child:hover
+  border-top-left-radius: 6px
+  border-bottom-left-radius: 6px
+
+.tool-top .tool-item:last-child:hover, .tool-bottom .tool-item:last-child:hover
+  border-top-right-radius: 6px
+  border-bottom-right-radius: 6px
+
+.tool-vertical-top .tool-item:first-child:hover, .tool-vertical-bottom .tool-item:first-child:hover
+  border-top-left-radius: 6px
+  border-top-right-radius: 6px
+
+.tool-vertical-top .tool-item:last-child:hover, .tool-vertical-bottom .tool-item:last-child:hover
+  border-bottom-left-radius: 6px
+  border-bottom-right-radius: 6px
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif
+  font-weight: 700
+  line-height: 1.1
+  color: #364347
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small
+  color: #93a4aa
+  font-size: 82%
+
+h1, h2, h3
+  margin-top: 24px
+  margin-bottom: 12px
+
+h4, h5
+  margin-top: 12px
+  margin-bottom: 12px
+
+h6
+  margin-top: 12px
+  margin-bottom: 12px
+  font-weight: normal
+
+h1, .h1
+  font-size: 36px
+
+h2, .h2
+  font-size: 30px
+
+h3, .h3
+  font-size: 24px
+
+h4, .h4
+  font-size: 20px
+
+h5, .h5
+  font-size: 16px
+
+h6, .h6
+  font-size: 14px
+
+.page-header
+  padding-bottom: 11px
+  margin: 48px 0 24px
+  border-bottom: none
+
+p
+  color: #364347
+
+.thumbnail
+  padding: 0
+  border: 0
+  position: relative
+
+  &[class*="ss-"]:before, &[class*="fa-"]:before
+    position: absolute
+    left: 50%
+    top: 50%
+    color: #FFF
+    z-index: 2
+    opacity: 0
+    transition: all 0.5s
+    -webkit-transition: all 0.5s
+    font-size: 36px
+    margin: -18px 0 0 -18px
+    color: #93a4aa
+
+  .caption
+    border-bottom: 2px solid #d6e1e5
+    border-left: 2px solid #d6e1e5
+    border-right: 2px solid #d6e1e5
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+    color: #364347
+    font-size: 14px
+    line-height: 1.7142857142857142
+    padding: 20px
+
+  &.thumbnail-caption
+    > img, a > img
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+
+    > img
+      width: 100%
+
+a.thumbnail
+  &:after
+    content: '\A'
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background: rgba(0, 0, 0, 0.6)
+    opacity: 0
+    transition: all 0.5s
+    -webkit-transition: all 0.5s
+
+  &:hover:after, &[class*="ss-"]:hover:before, &[class*="fa-"]:hover:before
+    opacity: 1
+
+.switch
+  display: inline-block
+  cursor: pointer
+  border-radius: 20px
+  position: relative
+  text-align: left
+  overflow: hidden
+  line-height: 8px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+  vertical-align: middle
+  width: 60px
+
+  &.switch-animate .switch-container
+    -webkit-transition: margin-left 0.5s
+    transition: margin-left 0.5s
+
+  &.switch-on
+    .switch-container
+      margin-left: 0%
+
+    .switch-label
+      border-radius: 50%
+
+  &.switch-off
+    .switch-container
+      margin-left: -55%
+
+    .switch-label
+      border-radius: 50%
+      border-color: #93a4aa
+
+  &.switch-indeterminate .switch-container
+    margin-left: -25%
+
+  &.switch-disabled, &.switch-readonly, &.switch-indeterminate
+    opacity: 0.5
+    filter: alpha(opacity = 50)
+    cursor: default !important
+
+  &.switch-disabled .switch-handle-on, &.switch-readonly .switch-handle-on, &.switch-indeterminate .switch-handle-on, &.switch-disabled .switch-handle-off, &.switch-readonly .switch-handle-off, &.switch-indeterminate .switch-handle-off, &.switch-disabled .switch-label, &.switch-readonly .switch-label, &.switch-indeterminate .switch-label
+    cursor: default !important
+
+  .switch-container
+    display: inline-block
+    width: 150px
+    top: 0
+    border-radius: 20px
+
+  .switch-handle-on, .switch-handle-off, .switch-label
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    cursor: pointer
+    display: inline-block !important
+    height: 100%
+    padding-bottom: 4px
+    padding-top: 4px
+    font-size: 14px
+    line-height: 20px
+
+  .switch-handle-on, .switch-handle-off
+    text-align: center
+    z-index: 1
+    width: 46px
+
+  .switch-handle-on.switch-primary, .switch-handle-off.switch-primary
+    color: #fff
+    background: #02baf2
+
+  .switch-handle-on.switch-info, .switch-handle-off.switch-info
+    color: #fff
+    background: red
+
+  .switch-handle-on.switch-success, .switch-handle-off.switch-success
+    color: #fff
+    background: green
+
+  .switch-handle-on.switch-warning, .switch-handle-off.switch-warning
+    background: yellow
+    color: #fff
+
+  .switch-handle-on.switch-danger, .switch-handle-off.switch-danger
+    color: #fff
+    background: redg
+
+  .switch-handle-on.switch-default, .switch-handle-off.switch-default
+    color: white
+    background: #93a4aa
+
+  .switch-handle-on
+    border-bottom-left-radius: 20px
+    border-top-left-radius: 20px
+    text-indent: -3px
+
+  .switch-handle-off
+    border-bottom-right-radius: 20px
+    border-top-right-radius: 20px
+    text-indent: 3px
+
+  .switch-label
+    text-align: center
+    z-index: 100
+    background: #ffffff
+    border-radius: 50%
+    border: 3px solid #02baf2
+    height: 28px
+    width: 28px
+    vertical-align: middle
+    margin: 0 -13px
+    position: relative
+
+  input
+    &[type='radio'], &[type='checkbox']
+      position: absolute !important
+      top: 0
+      left: 0
+      opacity: 0
+      filter: alpha(opacity = 0)
+      z-index: -1

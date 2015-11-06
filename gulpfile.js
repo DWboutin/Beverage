@@ -8,7 +8,20 @@ var eslint = require('gulp-eslint');
 var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-ruby-sass');
 var config = require('./config');
+var imageop = require('gulp-image-optimization');
+
+gulp.task('images', function(cb) {
+  gulp.src('./src/assets/images/**/*')
+    .pipe( imageop({
+      optimizationLevel: 5,
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest('./public/images/'));
+});
+
 
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync({
@@ -64,10 +77,28 @@ gulp.task('lint', function (cb) {
     .pipe(eslint.failOnError());
 });
 
+gulp.task('sass', function () {
+  return sass('./src/assets/sass/style.sass', { sourcemap: true,  style: 'compressed' })
+    .on('error', sass.logError)
+
+    // For file sourcemaps
+    .pipe(sourcemaps.write('./', {
+      includeContent: false,
+      sourceRoot: 'source'
+    }))
+
+    .pipe(gulp.dest('./public/css/'));
+});
+
+gulp.task('fonts', function() {
+  return gulp.src('./src/assets/fonts/**/*').pipe(gulp.dest('./public/fonts/'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(['./src/**/*.js'], ['lint', 'browserify', browserSync.reload]);
+  gulp.watch(['./src/assets/sass/**/*.sass'], ['sass', browserSync.reload]);
 });
 
 gulp.task('serve', ['browser-sync', 'watch']);
 
-gulp.task('default', ['browserify', 'nodemon', 'watch']);
+gulp.task('default', ['browserify', 'nodemon', 'sass', 'fonts', 'images', 'watch']);

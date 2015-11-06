@@ -16,13 +16,15 @@ export function recipeSubmitError(msg){
   }
 }
 
-export function submitRecipe({title, tags, code}) {
+export function submitRecipe(data) {
   return function (dispatch) {
+
+    let jsonData = JSON.stringify(data);
 
     return request
       .post(config.API_URL + '/recipe')
       .set('Content-Type', 'application/json')
-      .send('{"title":"'+ title +'","tags":"'+ tags +'","code":"'+ code +'"}')
+      .send(jsonData)
       .end((err, res) => {
         // if it have a result
         if(res.body.status) {
