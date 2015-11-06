@@ -11,6 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-ruby-sass');
 var config = require('./config');
 var imageop = require('gulp-image-optimization');
+var concat = require('gulp-concat');
 
 gulp.task('images', function(cb) {
   gulp.src('./src/assets/images/**/*')
@@ -90,15 +91,25 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./public/css/'));
 });
 
+gulp.task('scripts', function(){
+  return gulp.src(['./src/assets/js/boostrap.min.js','./src/assets/js/checkbox.js','./src/assets/js/radio.js','./src/assets/js/bootstrap-switch.js','./src/assets/js/toolbar.js','./src/assets/js/application.js'])
+    .pipe(sourcemaps.init())
+    .pipe(concat('assets.min.js'))
+    .pipe(gulp.dest('./public/js/'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./public/js/'));
+});
+
 gulp.task('fonts', function() {
   return gulp.src('./src/assets/fonts/**/*').pipe(gulp.dest('./public/fonts/'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['./src/**/*.js'], ['lint', 'browserify', browserSync.reload]);
+  gulp.watch(['./src/**/*.js'], ['lint', 'browserify', 'scripts', browserSync.reload]);
   gulp.watch(['./src/assets/sass/**/*.sass'], ['sass', browserSync.reload]);
 });
 
 gulp.task('serve', ['browser-sync', 'watch']);
 
-gulp.task('default', ['browserify', 'nodemon', 'sass', 'fonts', 'images', 'watch']);
+gulp.task('default', ['browserify', 'nodemon', 'sass', 'scripts', 'fonts', 'images', 'watch']);
