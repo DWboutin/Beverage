@@ -7,14 +7,14 @@ import Header from './parts/Header.react';
 class App extends React.Component {
   
   componentWillMount() {
-    if(global.sessionStorage !== undefined && global.sessionStorage.getItem('user') !== undefined){
+    if(global.localStorage !== undefined && global.localStorage.getItem('user') !== undefined){
       this.sessionManagement();
     }
   }
 
   sessionManagement() {
     let { dispatch } = this.props;
-    let session = global.sessionStorage;
+    let session = global.localStorage;
 
     if(session.user_expiration < Date.now()){
       dispatch(logout());

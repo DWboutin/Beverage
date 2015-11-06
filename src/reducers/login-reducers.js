@@ -34,8 +34,8 @@ export function login(state = initialState, action = {}) {
       };
 
     case ACTIONS.LOGOUT:
-      if(global.sessionStorage !== undefined){
-        let session = global.sessionStorage;
+      if(global.localStorage !== undefined){
+        let session = global.localStorage;
 
         session.removeItem('user');
         session.removeItem('user_expiration');

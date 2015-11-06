@@ -2,7 +2,7 @@ import { ACTIONS } from '../utils/consts';
 import config from '../../config';
 import request from 'superagent';
 
-let session = global.sessionStorage;
+let session = global.localStorage;
 
 export function requestLoginAuth() {
   return {
@@ -44,7 +44,6 @@ export function fetchLoginAuth({username, password, encrypted = false}) {
 
         // if it have a result
         if(res.body.status) {
-          console.log(res.body);
           session.setItem('user', res.body.data._id);
           session.setItem('username', res.body.data.username);
           session.setItem('userkey', res.body.key);
