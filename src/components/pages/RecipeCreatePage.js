@@ -5,7 +5,13 @@ import { connect } from 'react-redux';
 import { submitRecipe } from '../../actions/recipes-actions';
 import RecipeForm from '../forms/RecipeForm.react';
 
+import { redirectIfNotLoggedIn } from '../../utils/helpers';
+
 class RecipeCreatePage extends React.Component {
+
+  componentWillMount() {
+    redirectIfNotLoggedIn(this.props, '/recipes');
+  }
 
   handleSubmit(data) {
     let { dispatch } = this.props;
@@ -33,4 +39,4 @@ class RecipeCreatePage extends React.Component {
   }
 }
 
-export default connect()(RecipeCreatePage);
+export default connect(state => ({user: state.login.user}))(RecipeCreatePage);

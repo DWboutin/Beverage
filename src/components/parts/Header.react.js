@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { BASE_URL } from '../../../config';
 
 import UserProfileMenu from './UserProfileMenu.react';
+import IfLoggedIn from '../helpers/IfLoggedIn.react';
 
 export default class Header extends React.Component {
 
@@ -34,7 +35,9 @@ export default class Header extends React.Component {
                 <ul className="dropdown-menu">
                   <div className="arrow top"></div>
                   <li><Link to="/recipes" activeClassName="active">List</Link></li>
-                  <li><Link to="/recipes/create" activeClassName="active">Create</Link></li>
+                  <IfLoggedIn>
+                    <li><Link to="/recipes/create" activeClassName="active">Create</Link></li>
+                  </IfLoggedIn>
                 </ul>
               </li>
             </ul>
