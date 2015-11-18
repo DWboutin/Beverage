@@ -9,7 +9,7 @@ import { redirectIfNotLoggedIn } from '../../utils/helpers';
 
 class RecipeCreatePage extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     redirectIfNotLoggedIn(this.props, '/recipes');
   }
 

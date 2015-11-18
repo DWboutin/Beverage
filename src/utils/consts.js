@@ -11,9 +11,13 @@ export default {
     LOGOUT: 'LOGOUT',
     REGISTRATION_SENT: 'REGISTRATION_SENT',
     REGISTRATION_COMPLETED: 'REGISTRATION_COMPLETED',
-    REGISTRATION_ERRORS: 'REGISTRATION_ERRORS'
+    REGISTRATION_ERRORS: 'REGISTRATION_ERRORS',
+    REQUEST_RECIPES: 'REQUEST_RECIPES',
+    RECEIVE_RECIPES: 'RECEIVE_RECIPES',
+    RECEIVE_RECIPES_ERRORS: 'RECEIVE_RECIPES_ERRORS'
   },
   MESSAGES: {
-    recipeCreated: 'Your recipe was successfully created'
+    recipeCreated: 'Your recipe was successfully created',
+    mustBeConnected: 'You must be connected to complete this action'
   }
 }

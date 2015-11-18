@@ -29,7 +29,7 @@ class RecipeForm extends React.Component {
   }
 
   render() {
-    const { fields: {title, tags, code}, handleSubmit } = this.props;
+    const { fields: {title, tags, code, description, packages}, handleSubmit } = this.props;
 
     return (
       <form onSubmit={handleSubmit}>
@@ -42,6 +42,16 @@ class RecipeForm extends React.Component {
           <label htmlFor="tags">Tags</label>
           <input type="text" {...tags} />
           {tags.error && tags.touched && <div>{tags.error}</div>}
+        </div>
+        <div>
+          <label htmlFor="packages">Packages</label>
+          <input type="text" {...packages} />
+          {packages.error && packages.touched && <div>{packages.error}</div>}
+        </div>
+        <div>
+          <label htmlFor="description">Description</label>
+          <textarea {...description} />
+          {description.error && description.touched && <div>{description.error}</div>}
         </div>
         <div>
           <label htmlFor="code">Code</label>
@@ -59,7 +69,7 @@ class RecipeForm extends React.Component {
 
 RecipeForm = reduxForm({
   form: 'recipeForm',
-  fields: ['title', 'tags', 'code'],
+  fields: ['title', 'tags', 'code', 'description', 'packages'],
   validate: recipeValidation
 })(RecipeForm);
 

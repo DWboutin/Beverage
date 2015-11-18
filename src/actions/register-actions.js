@@ -25,10 +25,12 @@ export function sendRegistration(data) {
   return function (dispatch) {
     dispatch(registrationSent());
 
+    let jsonData = JSON.stringify(data);
+
     return request
       .post(config.API_URL + '/user')
       .set('Content-Type', 'application/json')
-      .send(JSON.stringify(data))
+      .send(jsonData)
       .end((err, res) => {
 
         // if it have a result

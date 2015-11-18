@@ -1,10 +1,9 @@
 import { ACTIONS, MESSAGES } from '../utils/consts';
 
 const initialState = {
-  recipes: [],
+  items: [],
   isFetching: false,
   error: false,
-  status: '',
   message: ''
 };
 
@@ -15,7 +14,6 @@ export function recipes(state = initialState, action = {}) {
     case ACTIONS.RECIPE_CREATED:
       return {
         ...state,
-        status: 'success',
         error: false,
         message: MESSAGES.recipeCreated
       };
@@ -23,9 +21,29 @@ export function recipes(state = initialState, action = {}) {
     case ACTIONS.RECIPE_SUBMIT_ERROR:
       return {
         ...state,
-        status: 'error',
         error: true,
-        message: action.msg
+        message: action.message
+      };
+
+    case ACTIONS.REQUEST_RECIPES:
+      return {
+        ...state,
+        isFetching: true
+      };
+
+    case ACTIONS.RECEIVE_RECIPES:
+      return {
+        ...state,
+        isFetching: false,
+        items: action.data
+      };
+
+    case ACTIONS.RECEIVE_RECIPES_ERRORS:
+      return {
+        ...state,
+        isFetching: false,
+        error: true,
+        message: action.message
       };
 
     default:
