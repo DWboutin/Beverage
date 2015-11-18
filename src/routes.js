@@ -6,6 +6,7 @@ import RecipePage from './components/pages/RecipePage.react';
 import RecipeCreatePage from './components/pages/RecipeCreatePage';
 import RegisterPage from './components/pages/RegisterPage.react';
 import RecipeListingPage from './components/pages/RecipeListingPage.react';
+import RecipeViewPage from './components/pages/RecipeViewPage.react';
 
 export default (
   <Route path="/" component={App}>
@@ -13,6 +14,7 @@ export default (
     <Route path="recipes" component={RecipePage}>
       <IndexRoute component={RecipeListingPage}/>
       <Route path="create" component={RecipeCreatePage}/>
+      <Route path="view/:recipeId/:title" component={RecipeViewPage}/>
     </Route>
     <Route path="register" component={RegisterPage} />
   </Route>

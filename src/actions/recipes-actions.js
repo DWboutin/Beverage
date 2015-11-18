@@ -26,6 +26,7 @@ export function submitRecipe(data) {
     if(userID !== null){
 
       data.author = userID;
+      data.code += '\n';
 
       let jsonData = JSON.stringify(data);
 
@@ -63,6 +64,13 @@ export function receiveRecipes(data) {
   }
 }
 
+export function receiveRecipe(data) {
+  return {
+    type: ACTIONS.RECEIVE_RECIPE,
+    data: data
+  }
+}
+
 export function receiveRecipesErrors(message) {
   return {
     type: ACTIONS.RECEIVE_RECIPES_ERRORS,
@@ -78,13 +86,32 @@ export function fetchRecipes() {
     return request
       .get(config.API_URL + '/recipes')
       .end((err, res) => {
-        // if it have a result
+
+        // if it have a result status = 1
         if(res.body.status) {
           dispatch(receiveRecipes(res.body.data));
         } else {
           dispatch(receiveRecipesErrors(res.body.message));
         }
+      });
 
+  };
+}
+
+export function fetchRecipeById(id) {
+  return function (dispatch) {
+    dispatch(requestRecipes());
+
+    return request
+      .get(config.API_URL + '/recipe/' + id)
+      .end((err, res) => {
+
+        // if it have a result status = 1
+        if(res.body.status) {
+          dispatch(receiveRecipe(res.body.data));
+        } else {
+          dispatch(receiveRecipesErrors(res.body.message));
+        }
       });
 
   };

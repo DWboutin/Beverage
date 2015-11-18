@@ -2,6 +2,7 @@ import { ACTIONS, MESSAGES } from '../utils/consts';
 
 const initialState = {
   items: [],
+  currentItem: {},
   isFetching: false,
   error: false,
   message: ''
@@ -36,6 +37,13 @@ export function recipes(state = initialState, action = {}) {
         ...state,
         isFetching: false,
         items: action.data
+      };
+
+    case ACTIONS.RECEIVE_RECIPE:
+      return {
+        ...state,
+        isFetching: false,
+        currentItem: action.data
       };
 
     case ACTIONS.RECEIVE_RECIPES_ERRORS:

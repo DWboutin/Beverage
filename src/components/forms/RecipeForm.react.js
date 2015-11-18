@@ -11,6 +11,7 @@ class RecipeForm extends React.Component {
 
     this.editor.getSession().setMode('ace/mode/javascript');
     this.editor.setTheme('ace/theme/monokai');
+    this.editor.setShowPrintMargin(false);
 
     this.editor.on('change', (e) => {
       let values = this.props.values;
