@@ -14,9 +14,8 @@ class UserProfileMenu extends React.Component {
   notLoggedIn() {
     return (
       <ul className="nav navbar-nav navbar-right navbar-icons">
-        <li>
-          <Link to="/login" activeClassName="active"><span>Login</span> <i className="fa fa-key"></i></Link>
-        </li>
+        <li><Link to="/register" activeClassName="active"><span>Register</span></Link></li>
+        <li><Link to="/login" activeClassName="active"><span>Login</span> <i className="fa fa-key"></i></Link></li>
       </ul>
     );
   }
