@@ -5,7 +5,17 @@ import { BASE_URL } from '../../../config';
 import UserProfileMenu from './UserProfileMenu.react';
 import IfLoggedIn from '../helpers/IfLoggedIn.react';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
+
+  shouldComponentUpdate(nextProps, nextState) {
+
+    // Si un ID est reçu et n'est pas égal au id déjà reçu (défault undefined)
+    if(nextProps.user._id !== this.props.user._id){
+      return true;
+    }
+
+    return false;
+  }
 
   renderUserName() {
     let { user } = this.props;
@@ -49,3 +59,10 @@ export default class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  user: React.PropTypes.object.isRequired,
+  handleLogout: React.PropTypes.func.isRequired
+};
+
+export default Header;

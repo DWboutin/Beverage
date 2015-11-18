@@ -17,6 +17,7 @@ export default class Html extends React.Component {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <title>{APP_NAME}</title>
+        <link rel="icon" href={ BASE_URL + "/assets/images/favicon.ico"} />
         <script dangerouslySetInnerHTML={{__html: 'window.__INITIAL_STATE__ = ' + initialState}}></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
         <link href={ BASE_URL + "/assets/css/style.css"} rel="stylesheet" />

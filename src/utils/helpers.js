@@ -6,4 +6,4 @@ export function redirectIfNotLoggedIn(props, route) {
       props.history.replaceState(null, route);
     }
   }
-} 
+}

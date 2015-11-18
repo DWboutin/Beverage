@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
         <div className="form-group row">
           <label className="col-sm-3 control-label" htmlFor="password">Password</label>
           <div className="col-sm-9">
-            <input type="text" className="form-control" {...password}/>
+            <input type="password" className="form-control" {...password}/>
           </div>
         </div>
         {password.error && password.touched && <div>{password.error}</div>}
@@ -40,5 +40,9 @@ LoginForm = reduxForm({
   fields: ['username', 'password'],
   validate: loginValidation,
 })(LoginForm);
+
+LoginForm.propTypes = {
+  onSubmit: React.PropTypes.func.isRequired,
+};
 
 export default LoginForm;

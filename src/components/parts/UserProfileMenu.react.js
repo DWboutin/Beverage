@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default class UserProfileMenu extends React.Component {
+class UserProfileMenu extends React.Component {
+
+  shouldComponentUpdate(nextProps) {
+    if(nextProps.user._id !== this.props.user._id){
+      return true;
+    }
+
+    return false;
+  }
 
   notLoggedIn() {
     return (
@@ -52,3 +60,10 @@ export default class UserProfileMenu extends React.Component {
     }
   }
 }
+
+UserProfileMenu.propTypes = {
+  user: React.PropTypes.object.isRequired,
+  handleLogout: React.PropTypes.func.isRequired
+};
+
+export default UserProfileMenu;

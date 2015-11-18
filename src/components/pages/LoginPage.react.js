@@ -9,8 +9,8 @@ class LoginPage extends React.Component {
   handleSubmit(data) {
     let { dispatch } = this.props;
 
-    dispatch(initialize('loginForm', {})); // clear form
-    dispatch(fetchLoginAuth(data));
+    dispatch( initialize('loginForm', {}) ); // clear form
+    dispatch( fetchLoginAuth(data) );
   }
 
   render() {

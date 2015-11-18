@@ -16,17 +16,13 @@ class RecipeCreatePage extends React.Component {
   handleSubmit(data) {
     let { dispatch } = this.props;
 
-    dispatch(submitRecipe(data));
+    dispatch( submitRecipe(data) );
   }
 
   handleEditorChange(data) {
     let { dispatch } = this.props;
 
-    dispatch(initialize('recipeForm', data));
-  }
-
-  onDrop(files) {
-    console.log('Received files: ', files);
+    dispatch( initialize('recipeForm', data) );
   }
 
   render() {

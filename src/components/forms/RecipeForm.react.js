@@ -3,7 +3,6 @@ import { reduxForm } from 'redux-form';
 import recipeValidation from '../../utils/validations/recipeForm';
 import ace from '../../wrappers/brace.pkg';
 
-
 class RecipeForm extends React.Component {
 
   componentDidMount() {
@@ -63,5 +62,9 @@ RecipeForm = reduxForm({
   fields: ['title', 'tags', 'code'],
   validate: recipeValidation
 })(RecipeForm);
+
+RecipeForm.propTypes = {
+  onSubmit: React.PropTypes.func.isRequired
+};
 
 export default RecipeForm;

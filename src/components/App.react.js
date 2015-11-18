@@ -41,4 +41,8 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  user: React.PropTypes.object.isRequired
+};
+
 export default connect(state => ({user: state.login.user}))(App);
