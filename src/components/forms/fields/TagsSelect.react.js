@@ -6,7 +6,7 @@ class TagsSelect extends React.Component {
 
     $('select[name='+ name +']').select2({
       tags: true,
-      tokenSeparators: [',']
+      tokenSeparators: [', ']
     }).on('change', function() {
       onFieldChange(name, $(this).val())
     });

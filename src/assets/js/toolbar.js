@@ -108,8 +108,6 @@ if ( typeof Object.create !== 'function' ) {
         getCoordinates: function( position, adjustment ) {
             var self = this;
             self.coordinates = self.$elem.offset();
-            console.log(self.coordinates.top-200);
-            console.log(self.toolbar.height());
 
             if (self.options.adjustment && self.options.adjustment[self.options.position]) {
                 adjustment = self.options.adjustment[self.options.position] + adjustment;

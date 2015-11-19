@@ -13,6 +13,7 @@ class IfLoggedIn extends React.Component {
 
   render() {
     let { user } = this.props;
+
     if (user._id !== undefined) {
       return this.props.children;
     }

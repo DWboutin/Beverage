@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { fetchRecipeById } from '../../actions/recipes-actions';
 import ace from '../../wrappers/brace.pkg';
 
+import UserToolbarActions from '../parts/UserToolbarActions.react';
+
 class RecipeViewPage extends React.Component {
 
   componentWillMount() {
@@ -32,6 +34,10 @@ class RecipeViewPage extends React.Component {
     });
 
     this.editor.$blockScrolling = Infinity;
+
+    if(currentRecipe.code !== undefined){
+      this.editor.setValue(currentRecipe.code, 1);
+    }
   }
 
   componentDidUpdate() {
@@ -54,7 +60,9 @@ class RecipeViewPage extends React.Component {
       <div id="recipe-view-page">
         <div className="container">
           <div className="row">
-            <div className="col-md-1"></div>
+            <div className="col-md-1">
+              <UserToolbarActions authorId={ currentRecipe.author }/>
+            </div>
             <div className="col-md-9">
               <h2>{ currentRecipe.title }</h2>
               <div><strong>Packages: </strong> { currentRecipe.packages }</div>
