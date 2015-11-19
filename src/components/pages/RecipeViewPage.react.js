@@ -57,6 +57,7 @@ class RecipeViewPage extends React.Component {
             <div className="col-md-1"></div>
             <div className="col-md-9">
               <h2>{ currentRecipe.title }</h2>
+              <div><strong>Packages: </strong> { currentRecipe.packages }</div>
               <p>{ currentRecipe.description }</p>
               <div id="javascript-editor" style={{height: '400px'}}></div>
             </div>

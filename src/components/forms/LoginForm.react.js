@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
         <div className="form-group row">
           <label className="col-sm-3 control-label" htmlFor="username">Username</label>
           <div className="col-sm-9">
-            <input type="text" className="form-control" {...username}/>
+            <input type="text" className="form-control" id="username" {...username}/>
           </div>
         </div>
         {username.error && username.touched && <div>{username.error}</div>}
@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
         <div className="form-group row">
           <label className="col-sm-3 control-label" htmlFor="password">Password</label>
           <div className="col-sm-9">
-            <input type="password" className="form-control" {...password}/>
+            <input type="password" className="form-control" id="password" {...password}/>
           </div>
         </div>
         {password.error && password.touched && <div>{password.error}</div>}

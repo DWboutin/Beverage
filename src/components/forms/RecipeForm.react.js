@@ -1,7 +1,9 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import recipeValidation from '../../utils/validations/recipeForm';
 import ace from '../../wrappers/brace.pkg';
+
+import recipeValidation from '../../utils/validations/recipeForm';
+import TagsSelect from './fields/TagsSelect.react';
 
 class RecipeForm extends React.Component {
 
@@ -12,6 +14,8 @@ class RecipeForm extends React.Component {
     this.editor.getSession().setMode('ace/mode/javascript');
     this.editor.setTheme('ace/theme/monokai');
     this.editor.setShowPrintMargin(false);
+
+    this.editor.$blockScrolling = Infinity;
 
     this.editor.on('change', (e) => {
       let values = this.props.values;
@@ -29,39 +33,77 @@ class RecipeForm extends React.Component {
     this.editor.destroy();
   }
 
+  handleFieldChange(field, value) {
+    let { onFieldChange, values } = this.props;
+    let newValues = {...values};
+
+    newValues[field] = value;
+
+    onFieldChange(newValues);
+  }
+
   render() {
-    const { fields: {title, tags, code, description, packages}, handleSubmit } = this.props;
+    const { fields: {title, tags, code, description, packages}, handleSubmit, packagesItems, tagsItems } = this.props;
 
     return (
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input type="text" {...title} />
-          {title.error && title.touched && <div>{title.error}</div>}
+        <div className="row">
+          <label htmlFor="title" className="control-label col-sm-12">Title</label>
         </div>
-        <div>
-          <label htmlFor="tags">Tags</label>
-          <input type="text" {...tags} />
-          {tags.error && tags.touched && <div>{tags.error}</div>}
+        <div className="row">
+          <div className="col-sm-12">
+            <input type="text" id="title" className="full-field" {...title} />
+          </div>
         </div>
-        <div>
-          <label htmlFor="packages">Packages</label>
-          <input type="text" {...packages} />
-          {packages.error && packages.touched && <div>{packages.error}</div>}
+        <div className="form-group row">
+          <div className="col-sm-12">
+            {title.error && title.touched && <div>{title.error}</div>}
+          </div>
         </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <textarea {...description} />
-          {description.error && description.touched && <div>{description.error}</div>}
+        <div className="row">
+          <label htmlFor="tags" className="col-sm-6 control-label">Tags</label>
+          <label htmlFor="packages" className="col-sm-6 control-label">Packages</label>
         </div>
-        <div>
-          <label htmlFor="code">Code</label>
-          <textarea {...code} style={{visibility: 'hidden'}} />
-          <div id="javascript-editor" style={{height: '400px'}}></div>
-          {code.error && code.touched && <div>{code.error}</div>}
+        <div className="row">
+          <div className="col-sm-6">
+            <TagsSelect items={tagsItems} onFieldChange={this.handleFieldChange.bind(this)} {...tags} className="full-field" id="tags" />
+          </div>
+          <div className="col-sm-6">
+            <TagsSelect items={packagesItems} onFieldChange={this.handleFieldChange.bind(this)} {...packages} className="full-field" id="packages" />
+          </div>
         </div>
-        <div>
-          <button type="submit">Submit</button>
+        <div className="form-group row">
+          <div className="col-sm-6">
+            {tags.error && tags.touched && <div>{tags.error}</div>}
+          </div>
+          <div className="col-sm-6">
+            {packages.error && packages.touched && <div>{packages.error}</div>}
+          </div>
+        </div>
+        <div className="row">
+          <label htmlFor="description" className="col-sm-12 control-label">Description</label>
+        </div>
+        <div className="row">
+          <div className="col-sm-12">
+            <textarea {...description} id="description" className="full-field" />
+          </div>
+        </div>
+        <div className="form-group row">
+          <div className="col-sm-12">
+            {description.error && description.touched && <div>{description.error}</div>}
+          </div>
+        </div>
+        <div className="form-group row">
+          <div className="col-sm-12">
+            <textarea {...code} style={{visibility: 'hidden'}} />
+            <div id="javascript-editor" style={{height: '400px'}}></div>
+            {code.error && code.touched && <div>{code.error}</div>}
+          </div>
+        </div>
+        <div className="form-group row">
+          <div className="col-sm-6 col-sm-offset-3">
+            <button type="submit" className="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     );
